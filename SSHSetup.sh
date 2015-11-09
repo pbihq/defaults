@@ -1,5 +1,5 @@
 #!/bin/bash
-# PBI SSH Setup v1.3
+# PBI SSH Setup v1.4
 
 # Define variable(s)
 os=$(sw_vers -productVersion)
