@@ -6,7 +6,7 @@ os=$(sw_vers -productVersion)
 group=$(id -ng)
 
 # Define path for sshd_config
-if [[ $os > "10.10" ]]; then
+if [[ $os = 10.11.* ]]; then
 	sshd_config_path="/etc/ssh/sshd_config"
 else
 	sshd_config_path="/etc/sshd_config"
