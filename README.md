@@ -10,4 +10,4 @@ InstallStatus
 =============
 Install Status-Script on local machine. After that you can run it by simply typing "status" in the command line.
 
-        bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/InstallStatus.sh)
+    bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/InstallStatus.sh)
