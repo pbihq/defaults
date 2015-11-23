@@ -9,7 +9,7 @@ sudo -v
 sudo mkdir -p /usr/local /usr/local/bin
 
 # Assign rights for /usr/local/bin to local admin user
-chmod -R 755 /usr/local
+chmod -R 755 /usr/local/bin
 sudo chown -R $USER:$GROUP 755 /usr/local
 
 # Generate status script executable
