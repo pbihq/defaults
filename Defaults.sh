@@ -228,6 +228,9 @@ defaults write com.apple.LaunchServices	LSHandlers -array-add \
 defaults write com.apple.LaunchServices	LSHandlers -array-add \
 	'{LSHandlerContentType = "com.microsoft.waveform-audio"; LSHandlerRoleAll = "com.apple.quicktimeplayerx";}'
 
+# Install latest version of PBI 'Status' script
+bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/InstallStatus.sh)
+
 ## Change user picture
 # 1. Curl PBI user pictures tifs from web source into /Library/User\ Pictures/PBI
 #sudo dscl . delete /Users/$USER jpegphoto
