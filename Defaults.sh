@@ -120,10 +120,17 @@ defaults write -g PMPrintingExpandedStateForPrint2 -bool true
 #Set default save location to Mac.
 defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
+#Lautlos klicken
+defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 1
+
 ## Safari
 
 #Startseite auf hub.point-blank-internation.com setzen
 defaults write com.apple.Safari HomePage http://hub.point-blank-international.com
+
+#Neuer Tab / neues Fenster zeigt Homepage
+defaults write com.apple.Safari NewTabBehavior -int 0
+defaults write com.apple.Safari NewWindowBehavior -int 0
 
 #Favoritenleiste in Safari einblenden
 defaults write com.apple.Safari ShowFavoritesBar-v2 -bool true
@@ -167,9 +174,11 @@ defaults write com.apple.iChat.plist Unified.EnableGroups -bool No
 /usr/libexec/PlistBuddy -c "Add :CustomAwayMessages array" ~/Library/Preferences/com.apple.iChat.plist
 /usr/libexec/PlistBuddy -c "Add :CustomAwayMessages:0 string 'Feld'" ~/Library/Preferences/com.apple.iChat.plist
 /usr/libexec/PlistBuddy -c "Add :CustomAwayMessages:1 string 'Mittagspause'" ~/Library/Preferences/com.apple.iChat.plist
+/usr/libexec/PlistBuddy -c "Add :CustomAwayMessages:2 string 'IT-Support'" ~/Library/Preferences/com.apple.iChat.plist
 
 /usr/libexec/PlistBuddy -c "Add :menuExtras array" ~/Library/Preferences/com.apple.systemuiserver.plist
-/usr/libexec/PlistBuddy -c "Add :menuExtras:0 string '/System/Library/CoreServices/Menu Extras/iChat.menu'" ~/Library/Preferences/com.apple.systemuiserver.plist
+/usr/libexec/PlistBuddy -c "Add :menuExtras:0 string '/System/Library/CoreServices/Menu Extras/Bluetooth.menu'" ~/Library/Preferences/com.apple.systemuiserver.plist
+/usr/libexec/PlistBuddy -c "Add :menuExtras:0 string '/System/Library/CoreServices/Menu Extras/Volume.menu'" ~/Library/Preferences/com.apple.systemuiserver.plist
 
 #### Mail
 defaults write com.apple.mail AddInvitationsToICalAutomatically -bool true
