@@ -378,9 +378,9 @@
 										<key>GID</key>
 										<integer>0</integer>
 										<key>PATH</key>
-										<string>/Users/paulgalow/Documents/Github/defaults/Webclips/Code Repo/asana_webclip.mobileconfig</string>
+										<string>asana_webclip.mobileconfig</string>
 										<key>PATH_TYPE</key>
-										<integer>0</integer>
+										<integer>3</integer>
 										<key>PERMISSIONS</key>
 										<integer>420</integer>
 										<key>TYPE</key>
@@ -523,7 +523,7 @@
 			<key>POSTINSTALL_PATH</key>
 			<dict>
 				<key>PATH</key>
-				<string>/Users/paulgalow/Documents/Github/defaults/Webclips/Code Repo/install_asana_webclip.sh</string>
+				<string>/Users/paulgalow/Documents/Github/defaults/Webclips/Asana Webclip/install_asana_webclip.sh</string>
 				<key>PATH_TYPE</key>
 				<integer>0</integer>
 			</dict>
