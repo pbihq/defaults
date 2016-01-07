@@ -9,7 +9,7 @@
 
 linkurl="http://bit.ly/1PVVjQn"
 linktitle="We're dispelling three popular myths in Planung &amp; Analyse (German article)"
-imageurl="http://cdn.pbi.online/sign/150827_PA_ResearchDesign.png"
+imageurl="http://cdn.pbi.online/signature/150827_PA_ResearchDesign.png"
 
 banner="$(echo "<a href=\"$linkurl\" title=\"$linktitle\"><img src=\"$imageurl\" alt=\"Banner\" style=\"width:210px;height:auto;max-width:71%;border:0;outline:none;text-decoration:none;\"></a>")"
 
@@ -56,7 +56,7 @@ Content-Type: text/html;
 
 	<div style="height:30px;"></div>
 
-<a href="http://www.point-blank-international.com/" title="Have a look at our website!"><img src="http://cdn.pbi.online/sign/logo.png" alt="Logo" style="width:auto;height:auto;max-width:156px;border:0;outline:none;text-decoration:none;"></a>
+<a href="http://www.point-blank-international.com/" title="Have a look at our website!"><img src="http://cdn.pbi.online/signature/logo.png" alt="Logo" style="width:auto;height:auto;max-width:156px;border:0;outline:none;text-decoration:none;"></a>
 
 	<div style="height:6px;"></div>
 
