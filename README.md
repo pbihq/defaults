@@ -8,6 +8,12 @@ Defaults
 
 InstallStatus
 =============
+Script to create PBI e-mail signatures
+
+    bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/SignatureGenerator.sh)
+
+InstallStatus
+=============
 Install Status-Script on local machine. After that you can run it by simply typing "status" in the command line.
 
     bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/InstallStatus.sh)
