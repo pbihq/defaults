@@ -83,7 +83,7 @@ Content-Type: text/html;
 <div style="max-width: 300px; line-height: 1.2em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #737577;">www.point-blank-international.com<br><br></div></a>
 
 <div style="max-width: 300px; line-height: 1.2em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #737577;">Gesch&auml;ftsf&uuml;hrer &#124; Managing Directors:<br>
-D&ouml;rte T&ouml;llner, Christian Eberz<br>
+Dr. Barbara Lang, Dr. Gerhard Keim, Tobias Wenker<br>
 Handelsregister &#124; Register of commerce:<br>
 Amtsgericht Charlottenburg, HRB 96988 B<br>
 Steuernummer &#124; Tax number: 37/487/20760<br>
