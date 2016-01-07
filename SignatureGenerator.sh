@@ -20,17 +20,15 @@ banner="$(echo "<a href=\"$linkurl\" title=\"$linktitle\"><img src=\"$imageurl\"
 clear
 echo "PBI SignatureGenerator starten..."
 echo
-read -p "Vorname des Mitarbeiters: " vorname
+read -p "(Dr.) Vor- und Nachname des Mitarbeiters: " name
 echo
-read -p "Nachname des Mitarbeiters: " nachname
+read -p "Username (Mailadresse ohne @point-blank-international.com): " username
 echo
-read -p "Mailadresse des Mitarbeiters (ohne @point-blank-international.com): " mailadresse
-echo
-read -p "Titel des Mitarbeiters? [kein Titel]: " titel
-	if [[ -z "$titel" ]]; then
+read -p "Job-Titel des Mitarbeiters? [kein Job-Titel]: " jobtitel
+	if [[ -z "$jobtitel" ]]; then
 		titelsignature=""
 	else
-		titelsignature=$(echo "$titel<br>")
+		titelsignature=$(echo "$jobtitel<br>")
 	fi
 echo
 read -p "Twitter-Handle des Mitarbeiters (ohne @) [kein Twitter]: " twitterhandle
@@ -50,7 +48,7 @@ echo
 # Generate Template
 ######################
 
-cat > ~/Desktop/$mailadresse.mailsignature << EOF
+cat > ~/Desktop/$username.mailsignature << EOF
 Content-Type: text/html;
 
 <head><meta name = "format-detection" content = "telephone=no"></head>
@@ -69,7 +67,7 @@ Content-Type: text/html;
 
 	<div style="max-width: 300px; line-height: 1.5em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #737577;">M&uuml;nzstr. 18<span style="font-size: 9.0px;"> &bull; </span>10178 Berlin<span style="font-size: 9.0px;"> &bull; </span>Germany</div></a>
 
-<a href="mailto:$mailadresse@point-blank-international.com" title="Send me an e-mail!" style="text-decoration:none; color: #737577"><div style="max-width: 220px; line-height: 1.2em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #6eab24;"><br>$vorname $nachname</div>
+<a href="mailto:$username@point-blank-international.com" title="Send me an e-mail!" style="text-decoration:none; color: #737577"><div style="max-width: 220px; line-height: 1.2em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #6eab24;"><br>$name</div>
 
 	<div style="max-width: 300px; line-height: 1.2em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #737577;">
 	$titelsignature</a><br></div>
@@ -97,15 +95,15 @@ EOF
 # Replace special characters with ASCII codes
 ###############################################
 
-sed -i "" "s/ß/\&szlig;/" ~/Desktop/$mailadresse.mailsignature
-sed -i "" "s/ \& / \&amp; /" ~/Desktop/$mailadresse.mailsignature
-sed -i "" "s/ä/\&auml;/" ~/Desktop/$mailadresse.mailsignature
-sed -i "" "s/ä/\&Auml;/" ~/Desktop/$mailadresse.mailsignature
-sed -i "" "s/ö/\&ouml;/" ~/Desktop/$mailadresse.mailsignature
-sed -i "" "s/ö/\&Ouml;/" ~/Desktop/$mailadresse.mailsignature
-sed -i "" "s/ü/\&uuml;/" ~/Desktop/$mailadresse.mailsignature
-sed -i "" "s/Ü/\&Uuml;/" ~/Desktop/$mailadresse.mailsignature
+sed -i "" "s/ß/\&szlig;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/ \& / \&amp; /" ~/Desktop/$username.mailsignature
+sed -i "" "s/ä/\&auml;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/ä/\&Auml;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/ö/\&ouml;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/ö/\&Ouml;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/ü/\&uuml;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/Ü/\&Uuml;/" ~/Desktop/$username.mailsignature
 
-osascript -e 'display notification "Signature wurde erstellt und auf dem Desktop abgelegt." with title "PBI SignatureGenerator"'
+osascript -e 'display notification "Signatur wurde erstellt und auf dem Desktop abgelegt." with title "PBI SignatureGenerator"'
 
 exit 0
