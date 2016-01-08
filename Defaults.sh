@@ -80,18 +80,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 dscacheutil -flushcache
 
 ## PBI NTP Setup
-
-# Set TimeServer variables
-TimeServer1=utm.point-blank-international.com
-TimeServer2=time.euro.apple.com
-
-# Set the primary network server with systemsetup -setnetworktimeserver
-# Using this command will clear /etc/ntp.conf of existing entries and
-# add the primary time server as the first line.
-sudo systemsetup -setnetworktimeserver $TimeServer1
-
-# Add the secondary time server as the second line in /etc/ntp.conf
-sudo sh -c "echo server $TimeServer2 >> /etc/ntp.conf"
+sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
 
 ## Bildschirmschoner
 defaults write com.apple.screensaver askForPassword -bool true
