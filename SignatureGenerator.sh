@@ -98,9 +98,9 @@ EOF
 sed -i "" "s/ß/\&szlig;/" ~/Desktop/$username.mailsignature
 sed -i "" "s/ \& / \&amp; /" ~/Desktop/$username.mailsignature
 sed -i "" "s/ä/\&auml;/" ~/Desktop/$username.mailsignature
-sed -i "" "s/ä/\&Auml;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/Ä/\&Auml;/" ~/Desktop/$username.mailsignature
 sed -i "" "s/ö/\&ouml;/" ~/Desktop/$username.mailsignature
-sed -i "" "s/ö/\&Ouml;/" ~/Desktop/$username.mailsignature
+sed -i "" "s/Ö/\&Ouml;/" ~/Desktop/$username.mailsignature
 sed -i "" "s/ü/\&uuml;/" ~/Desktop/$username.mailsignature
 sed -i "" "s/Ü/\&Uuml;/" ~/Desktop/$username.mailsignature
 
