@@ -3,19 +3,25 @@
 # PBI Mail Signature Generator
 #
 
-####################
+####################################
 # Current Banner
-####################
+####################################
+
+# Update linkurl and linktitle for current banner
 
 linkurl="http://bit.ly/1PVVjQn"
 linktitle="We're dispelling three popular myths in Planung &amp; Analyse (German article)"
-imageurl="http://cdn.pbi.online/signature/150827_PA_ResearchDesign.png"
 
+####################################
+# Banner template (do not change!)
+####################################
+
+imageurl="http://cdn.pbi.online/signature/banner.png"
 banner="$(echo "<a href=\"$linkurl\" title=\"$linktitle\"><img src=\"$imageurl\" alt=\"Banner\" style=\"width:210px;height:auto;max-width:71%;border:0;outline:none;text-decoration:none;\"></a>")"
 
-##################
+####################################
 # Get User Input
-##################
+####################################
 
 clear
 echo "PBI SignatureGenerator starten..."
@@ -44,9 +50,9 @@ read -p "Durchwahl [10]: " durchwahl
 	fi
 echo
 
-######################
+####################################
 # Generate Template
-######################
+####################################
 
 cat > ~/Desktop/$username.mailsignature << EOF
 Content-Type: text/html;
