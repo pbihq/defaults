@@ -90,7 +90,7 @@ Content-Type: text/html;
 Dr. Barbara Lang, Dr. Gerhard Keim, Tobias Wenker<br>
 Handelsregister &#124; Register of commerce:<br>
 Amtsgericht Charlottenburg, HRB 96988 B<br>
-Steuernummer &#124; Tax number: 37/487/20760<br>
+Steuernummer &#124; Tax number: 30/475/30746<br>
 USt-IdNr. &#124; VAT: DE 814395633</div><br>
 
 $banner
