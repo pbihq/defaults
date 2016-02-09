@@ -60,7 +60,8 @@ Content-Type: text/html;
 <head><meta name = "format-detection" content = "telephone=no"></head>
 <body style="margin: 0.0px 0.0px 0.0px 0.0px; max-width: 300px">
 
-	<div style="height:30px;"></div>
+	<br>
+	<br>
 
 <a href="http://www.point-blank-international.com/" title="Have a look at our website!"><img src="http://cdn.pbi.online/signature/logo.png" alt="Logo" style="width:auto;height:auto;max-width:156px;border:0;outline:none;text-decoration:none;"></a>
 
