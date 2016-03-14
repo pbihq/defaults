@@ -63,7 +63,7 @@ Content-Type: text/html;
 	<br>
 	<br>
 
-<a href="http://www.point-blank-international.com/" title="Have a look at our website!"><img src="http://cdn.pbi.online/signature/logo.png" alt="Logo" style="width:auto;height:auto;max-width:156px;border:0;outline:none;text-decoration:none;"></a>
+<a href="http://www.point-blank-international.com/" title="Have a look at our website!"><img src="http://cdn.pbi.online/signature/logo/160314_logo_pbi.png" alt="Logo" style="width:auto;height:auto;max-width:156px;border:0;outline:none;text-decoration:none;"></a>
 
 	<div style="height:6px;"></div>
 
