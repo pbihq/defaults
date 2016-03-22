@@ -114,8 +114,8 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 
 ## Safari
 
-#Startseite auf hub.point-blank-internation.com setzen
-/usr/bin/defaults write com.apple.Safari HomePage http://hub.point-blank-international.com
+#Startseite auf hub.pbi.online setzen
+/usr/bin/defaults write com.apple.Safari HomePage http://hub.pbi.online
 
 #Neuer Tab / neues Fenster zeigt Homepage
 /usr/bin/defaults write com.apple.Safari NewTabBehavior -int 0
