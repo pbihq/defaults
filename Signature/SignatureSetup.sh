@@ -32,25 +32,31 @@ SignaturIDTemp=$(sed -e '1,'"$Signaturzeile"'d' -e "$SignaturzeileEnde"',1000d' 
 SignaturID=$(echo $SignaturIDTemp | sed -e 's/<string>//' -e 's/<\/string>//')
 
 # Declare all the paths needed
-SourceFolder=~/Dropbox\ \(PBI\)/IT-Essentials/Signaturen
+Source="https://cdn.pbi.online/signature/applemail/$MAName.mailsignature"
 Destination=~/Library/Mail/V3/MailData/Signatures
 DestinationTemp=~/Library/Mail/V3/MailData
 
 # Declare all the files needed
-Source=$(echo "$SourceFolder/$MAName.mailsignature")
 TempFile=$(echo "$DestinationTemp/$SignaturID.mailsignature")
 DestinationFile=$(echo "$Destination/$SignaturID.mailsignature")
 NameChange=$(echo "$DestinationTemp/$MAName.mailsignature")
 
-# Now magic happens. First, unlock the present mail signature.
-chflags nouchg "$DestinationFile"
-# Copy the file from Dropbox to a temp folder
-cp -f "$Source" "$DestinationTemp"
-# Change filename to signature filename
-mv -f "$NameChange" "$TempFile"
-# Move file to final destination
-mv -f "$TempFile" "$DestinationFile"
-# Lock the mail signature again.
-chflags uchg "$DestinationFile"
+# A little check if the necessary folders exist. If not, abort
+if cd ~/Library/Mail/V3/MailData/Signatures; then
+	# Now magic happens. First, unlock the present mail signature.
+	chflags nouchg "$DestinationFile"
+	# Copy the file from Webspace to a temp folder
+	curl -s $Source -o $DestinationTemp/$MAName.mailsignature
+	# Change filename to signature filename
+	mv -f "$NameChange" "$TempFile"
+	# Move file to final destination
+	mv -f "$TempFile" "$DestinationFile"
+	# Lock the mail signature again.
+	chflags uchg "$DestinationFile"
+else
+	# In case of error give an error message.
+	echo "Die benötigten Ordner wurden nicht gefunden. Bitte informiere die PBI IT. $1" 1>&2
+	exit 1
+fi
 
 exit 0
