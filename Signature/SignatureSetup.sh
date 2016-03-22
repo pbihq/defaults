@@ -42,7 +42,8 @@ DestinationFile=$(echo "$Destination/$SignaturID.mailsignature")
 NameChange=$(echo "$DestinationTemp/$MAName.mailsignature")
 
 # A little check if the necessary folders exist. If not, abort
-if cd ~/Library/Mail/V3/MailData/Signatures; then
+if [ -d ~/Library/Mail/V3/MailData/Signatures ]; then
+	cd ~/Library/Mail/V3/MailData/Signatures
 	# Now magic happens. First, unlock the present mail signature.
 	chflags nouchg "$DestinationFile"
 	# Copy the file from Webspace to a temp folder
