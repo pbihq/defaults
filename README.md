@@ -11,3 +11,9 @@ SignatureGenerator
 Script to create PBI e-mail signatures
 
     bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureGenerator.sh)
+
+Webclips
+==================
+Script to install PBI web clips
+
+    bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/Webclips.sh)
