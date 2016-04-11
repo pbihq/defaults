@@ -9,14 +9,14 @@
 
 # Update linkurl and linktitle for current banner
 
-linkurl="http://bit.ly/1PVVjQn"
-linktitle="We're dispelling three popular myths in Planung &amp; Analyse (German article)"
+linkurl="http://bit.ly/1TM2bV1"
+linktitle="We’re featured in a new book on the future of Research and Design in Business Strategy."
 
 ####################################
 # Banner template (do not change!)
 ####################################
 
-imageurl="http://cdn.pbi.online/signature/banner.png"
+imageurl="http://cdn.pbi.online/signature/banner/160411_CA_BookLaunch.png"
 banner="$(echo "<a href=\"$linkurl\" title=\"$linktitle\"><img src=\"$imageurl\" alt=\"Banner\" style=\"width:210px;height:auto;max-width:71%;border:0;outline:none;text-decoration:none;\"></a>")"
 
 ####################################
