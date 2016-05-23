@@ -11,7 +11,7 @@
 
 # In the AccountsMaps.plist is a line like <string>imap://name.surname@berlin.point-blank-international.com/</string>. Find the line.
 Mitarbeiterfile=~/Library/Mail/V3/MailData/Signatures/AccountsMap.plist
-Suchlinie=berlin.point-blank-international.com
+Suchlinie=mail.point-blank-international.com
 Maillinie=$(grep "$Suchlinie" $Mitarbeiterfile)
 
 # Now extract only the name from this line. Sed takes the part starting with imap and ends with @. Then, in a second step, it deletes "imap://"
