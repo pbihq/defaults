@@ -235,6 +235,9 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/Insta
 # Install PBI web clips
 bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/Webclips.sh)
 
+# Install PBI Signature LaunchAgent
+bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
+
 ## Change user picture
 # 1. Curl PBI user pictures tifs from web source into /Library/User\ Pictures/PBI
 #sudo dscl . delete /Users/$USER jpegphoto
