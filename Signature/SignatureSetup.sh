@@ -14,6 +14,9 @@ Mitarbeiterfile=~/Library/Mail/V3/MailData/Signatures/AccountsMap.plist
 Suchlinie=mail.point-blank-international.com
 Maillinie=$(grep "$Suchlinie" $Mitarbeiterfile)
 
+# Now extract only the name from this line. Sed takes the part starting with imap and ends with @. Then, in a second step, it deletes "imap://"
+MAName=$(echo $Maillinie | sed -e 's/^.*\(imap[^@]*\).*/\1/' -e 's/imap\:\/\///')
+
 if [ -z "$MAName" ]; then
 	
 	echo "tell application \"Mail\"
@@ -31,9 +34,6 @@ end tell
 " | osascript
 	exit 1
 fi
-
-# Now extract only the name from this line. Sed takes the part starting with imap and ends with @. Then, in a second step, it deletes "imap://"
-MAName=$(echo $Maillinie | sed -e 's/^.*\(imap[^@]*\).*/\1/' -e 's/imap\:\/\///')
 
 # In this file is a line <string>PBI</string>. Find it. But since the output will be something like "9: <string>PBI</string>", delete everything behind the line number (starting with ":")
 Signaturfile=~/Library/Mail/V3/MailData/Signatures/AllSignatures.plist
