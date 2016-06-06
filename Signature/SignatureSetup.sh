@@ -17,6 +17,15 @@ Maillinie=$(grep "$Suchlinie" $Mitarbeiterfile)
 # Now extract only the name from this line. Sed takes the part starting with imap and ends with @. Then, in a second step, it deletes "imap://"
 MAName=$(echo $Maillinie | sed -e 's/^.*\(imap[^@]*\).*/\1/' -e 's/imap\:\/\///')
 
+# Temporary alternative, if there is still the old Server in the Mail Program.
+if [ -z "$MAName" ]; then
+SuchlinieAlt=berlin.point-blank-international.com
+MaillinieAlt=$(grep "$SuchlinieAlt" $Mitarbeiterfile)
+
+MAName=$(echo $MaillinieAlt | sed -e 's/^.*\(imap[^@]*\).*/\1/' -e 's/imap\:\/\///')
+fi
+
+# Send a mail if $MAName is empty
 if [ -z "$MAName" ]; then
 	
 	echo "tell application \"Mail\"
@@ -49,7 +58,8 @@ SignaturIDTemp=$(sed -e '1,'"$Signaturzeile"'d' -e "$SignaturzeileEnde"',1000d' 
 # Now get rid of the code around it.
 SignaturID=$(echo $SignaturIDTemp | sed -e 's/<string>//' -e 's/<\/string>//')
 
-if [ -z "$MAName" ]; then
+# Send a mail if $SignaturID is empty
+if [ -z "$SignaturID" ]; then
 	
 	echo "tell application \"Mail\"
 	
