@@ -91,6 +91,9 @@ sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
 sudo pmset -b sleep 15 displaysleep 5
 sudo pmset -c sleep 60 displaysleep 15
 
+# Lautstärke auf drei Balken einstellen
+osascript -e "set volume output volume 19"
+
 # Textkorrektur
 /usr/bin/defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
