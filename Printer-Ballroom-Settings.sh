@@ -4,250 +4,6 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>1 seitig</key>
-	<dict>
-		<key>com.apple.print.preset.id</key>
-		<string>1 seitig</string>
-		<key>com.apple.print.preset.settings</key>
-		<dict>
-			<key>AP_D_InputSlot</key>
-			<string></string>
-			<key>DuplexBindingEdge</key>
-			<integer>3</integer>
-			<key>PaperInfoIsSuggested</key>
-			<true/>
-			<key>com.apple.print.DocumentTicket.PMSpoolFormat</key>
-			<string>application/pdf</string>
-			<key>com.apple.print.JobInfo.PMJobName</key>
-			<string>Whiskas German Brand list v2</string>
-			<key>com.apple.print.PageToPaperMappingAllowScalingUp</key>
-			<true/>
-			<key>com.apple.print.PageToPaperMappingMediaName</key>
-			<string>A4</string>
-			<key>com.apple.print.PageToPaperMappingType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopies</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopyCollate</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMDestinationType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMDuplexing</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMFirstPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
-			<false/>
-			<key>com.apple.print.PrintSettings.PMLayoutRows</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMOrientation</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMPageRange</key>
-			<array>
-				<integer>1</integer>
-				<integer>2147483647</integer>
-			</array>
-			<key>com.apple.print.subTicket.paper_info_ticket</key>
-			<dict>
-				<key>PMPPDPaperCodeName</key>
-				<string>A4</string>
-				<key>PMPPDTranslationStringPaperName</key>
-				<string>A4</string>
-				<key>PMTiogaPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
-				<array>
-					<integer>0</integer>
-					<integer>0</integer>
-					<real>819.21258544921875</real>
-					<real>572.598388671875</real>
-				</array>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPaperRect</key>
-				<array>
-					<real>-11.33856201171875</real>
-					<real>-11.338600158691406</real>
-					<real>830.55120849609375</real>
-					<real>583.93695068359375</real>
-				</array>
-				<key>com.apple.print.PaperInfo.ppd.PMPaperName</key>
-				<string>A4</string>
-				<key>com.apple.print.ticket.type</key>
-				<string>com.apple.print.PaperInfoTicket</string>
-			</dict>
-			<key>com.apple.print.ticket.type</key>
-			<string>com.apple.print.PrintSettingsTicket</string>
-			<key>job-sheets</key>
-			<string>none</string>
-		</dict>
-	</dict>
-	<key>1x2 seitig</key>
-	<dict>
-		<key>com.apple.print.preset.id</key>
-		<string>1x2 seitig</string>
-		<key>com.apple.print.preset.settings</key>
-		<dict>
-			<key>AP_D_InputSlot</key>
-			<string></string>
-			<key>DuplexBindingEdge</key>
-			<integer>3</integer>
-			<key>PaperInfoIsSuggested</key>
-			<true/>
-			<key>com.apple.print.DocumentTicket.PMSpoolFormat</key>
-			<string>application/pdf</string>
-			<key>com.apple.print.JobInfo.PMJobName</key>
-			<string>Whiskas German Brand list v2</string>
-			<key>com.apple.print.PageToPaperMappingAllowScalingUp</key>
-			<true/>
-			<key>com.apple.print.PageToPaperMappingMediaName</key>
-			<string>A4</string>
-			<key>com.apple.print.PageToPaperMappingType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopies</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopyCollate</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMDestinationType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMDuplexing</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMFirstPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMLayoutRows</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMOrientation</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMPageRange</key>
-			<array>
-				<integer>1</integer>
-				<integer>2147483647</integer>
-			</array>
-			<key>com.apple.print.subTicket.paper_info_ticket</key>
-			<dict>
-				<key>PMPPDPaperCodeName</key>
-				<string>A4</string>
-				<key>PMPPDTranslationStringPaperName</key>
-				<string>A4</string>
-				<key>PMTiogaPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
-				<array>
-					<integer>0</integer>
-					<integer>0</integer>
-					<real>819.21258544921875</real>
-					<real>572.598388671875</real>
-				</array>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPaperRect</key>
-				<array>
-					<real>-11.33856201171875</real>
-					<real>-11.338600158691406</real>
-					<real>830.55120849609375</real>
-					<real>583.93695068359375</real>
-				</array>
-				<key>com.apple.print.PaperInfo.ppd.PMPaperName</key>
-				<string>A4</string>
-				<key>com.apple.print.ticket.type</key>
-				<string>com.apple.print.PaperInfoTicket</string>
-			</dict>
-			<key>com.apple.print.ticket.type</key>
-			<string>com.apple.print.PrintSettingsTicket</string>
-			<key>job-sheets</key>
-			<string>none</string>
-		</dict>
-	</dict>
-	<key>2x2 seitig</key>
-	<dict>
-		<key>com.apple.print.preset.id</key>
-		<string>2x2 seitig</string>
-		<key>com.apple.print.preset.settings</key>
-		<dict>
-			<key>AP_D_InputSlot</key>
-			<string></string>
-			<key>DuplexBindingEdge</key>
-			<integer>3</integer>
-			<key>PaperInfoIsSuggested</key>
-			<true/>
-			<key>StapleStatus</key>
-			<string>274</string>
-			<key>com.apple.print.PageToPaperMappingAllowScalingUp</key>
-			<true/>
-			<key>com.apple.print.PageToPaperMappingMediaName</key>
-			<string>A4</string>
-			<key>com.apple.print.PageToPaperMappingType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopies</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopyCollate</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMDestinationType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMDuplexing</key>
-			<integer>3</integer>
-			<key>com.apple.print.PrintSettings.PMFirstPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMLayoutRows</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMOrientation</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMPageRange</key>
-			<array>
-				<integer>1</integer>
-				<integer>2147483647</integer>
-			</array>
-			<key>com.apple.print.subTicket.paper_info_ticket</key>
-			<dict>
-				<key>PMPPDPaperCodeName</key>
-				<string>A4</string>
-				<key>PMPPDTranslationStringPaperName</key>
-				<string>A4</string>
-				<key>PMTiogaPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
-				<array>
-					<integer>0</integer>
-					<integer>0</integer>
-					<real>819.21258544921875</real>
-					<real>572.598388671875</real>
-				</array>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPaperRect</key>
-				<array>
-					<real>-11.33856201171875</real>
-					<real>-11.338600158691406</real>
-					<real>830.55120849609375</real>
-					<real>583.93695068359375</real>
-				</array>
-				<key>com.apple.print.PaperInfo.ppd.PMPaperName</key>
-				<string>A4</string>
-				<key>com.apple.print.ticket.type</key>
-				<string>com.apple.print.PaperInfoTicket</string>
-			</dict>
-			<key>com.apple.print.ticket.type</key>
-			<string>com.apple.print.PrintSettingsTicket</string>
-			<key>job-sheets</key>
-			<string>none</string>
-		</dict>
-	</dict>
 	<key>A4 SW 1:1 Hoch</key>
 	<dict>
 		<key>com.apple.print.preset.id</key>
@@ -469,11 +225,11 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>JobNameState</key>
 			<string>0</string>
 			<key>JobNameValue</key>
-			<string></string>
+			<string>Videooutputs DE V2</string>
 			<key>KCCollate</key>
 			<string>PrnDef</string>
 			<key>KCEcoprint</key>
-			<string>On</string>
+			<string>Off</string>
 			<key>KCUserLogin</key>
 			<string>False</string>
 			<key>KmCoverModeState</key>
@@ -533,7 +289,7 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>com.apple.print.PrintSettings.PMFirstPage</key>
 			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>2147483647</integer>
+			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
 			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
@@ -593,6 +349,15 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 				<string>A4</string>
 				<key>PMTiogaPaperName</key>
 				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMDisplayName</key>
+				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMPPDPaperDimension</key>
+				<array>
+					<integer>0</integer>
+					<integer>0</integer>
+					<real>595</real>
+					<real>842</real>
+				</array>
 				<key>com.apple.print.PaperInfo.PMPaperName</key>
 				<string>iso-a4</string>
 				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
@@ -651,11 +416,11 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>JobNameState</key>
 			<string>0</string>
 			<key>JobNameValue</key>
-			<string></string>
+			<string>Videooutputs DE V2</string>
 			<key>KCCollate</key>
 			<string>PrnDef</string>
 			<key>KCEcoprint</key>
-			<string>On</string>
+			<string>Off</string>
 			<key>KCUserLogin</key>
 			<string>False</string>
 			<key>KmCoverModeState</key>
@@ -715,7 +480,7 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>com.apple.print.PrintSettings.PMFirstPage</key>
 			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>2147483647</integer>
+			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
 			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
@@ -775,6 +540,15 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 				<string>A4</string>
 				<key>PMTiogaPaperName</key>
 				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMDisplayName</key>
+				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMPPDPaperDimension</key>
+				<array>
+					<integer>0</integer>
+					<integer>0</integer>
+					<real>595</real>
+					<real>842</real>
+				</array>
 				<key>com.apple.print.PaperInfo.PMPaperName</key>
 				<string>iso-a4</string>
 				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
@@ -1201,11 +975,11 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>JobNameState</key>
 			<string>0</string>
 			<key>JobNameValue</key>
-			<string>Temp Tracken</string>
+			<string>Videooutputs DE V2</string>
 			<key>KCCollate</key>
 			<string>PrnDef</string>
 			<key>KCEcoprint</key>
-			<string>On</string>
+			<string>Off</string>
 			<key>KCUserLogin</key>
 			<string>False</string>
 			<key>KmCoverModeState</key>
@@ -1265,7 +1039,7 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>com.apple.print.PrintSettings.PMFirstPage</key>
 			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>2147483647</integer>
+			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
 			<integer>2</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
@@ -1337,6 +1111,15 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 				<string>A4</string>
 				<key>PMTiogaPaperName</key>
 				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMDisplayName</key>
+				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMPPDPaperDimension</key>
+				<array>
+					<integer>0</integer>
+					<integer>0</integer>
+					<real>595</real>
+					<real>842</real>
+				</array>
 				<key>com.apple.print.PaperInfo.PMPaperName</key>
 				<string>iso-a4</string>
 				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
@@ -1391,11 +1174,11 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>JobNameState</key>
 			<string>0</string>
 			<key>JobNameValue</key>
-			<string></string>
+			<string>Videooutputs DE V2</string>
 			<key>KCCollate</key>
 			<string>PrnDef</string>
 			<key>KCEcoprint</key>
-			<string>On</string>
+			<string>Off</string>
 			<key>KCUserLogin</key>
 			<string>False</string>
 			<key>KmCoverModeState</key>
@@ -1455,7 +1238,7 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<key>com.apple.print.PrintSettings.PMFirstPage</key>
 			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>2147483647</integer>
+			<integer>1</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
 			<integer>2</integer>
 			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
@@ -1515,6 +1298,15 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 				<string>A4</string>
 				<key>PMTiogaPaperName</key>
 				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMDisplayName</key>
+				<string>iso-a4</string>
+				<key>com.apple.print.PaperInfo.PMPPDPaperDimension</key>
+				<array>
+					<integer>0</integer>
+					<integer>0</integer>
+					<real>595</real>
+					<real>842</real>
+				</array>
 				<key>com.apple.print.PaperInfo.PMPaperName</key>
 				<string>iso-a4</string>
 				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
@@ -1720,365 +1512,17 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 			<string>none</string>
 		</dict>
 	</dict>
-	<key>Standard Qualität 1:1 Duplex SW A4</key>
-	<dict>
-		<key>com.apple.print.preset.id</key>
-		<string>Standard Qualität 1:1 Duplex SW A4</string>
-		<key>com.apple.print.preset.settings</key>
-		<dict>
-			<key>AP_D_InputSlot</key>
-			<string></string>
-			<key>AccessCodeValue</key>
-			<string></string>
-			<key>BookletBinding</key>
-			<false/>
-			<key>BoxNumberValue</key>
-			<string></string>
-			<key>BoxPasswordValue</key>
-			<string></string>
-			<key>ColorModel</key>
-			<string>Gray</string>
-			<key>DuplexBindingEdge</key>
-			<integer>2</integer>
-			<key>JobName</key>
-			<string>1</string>
-			<key>JobNameState</key>
-			<string>0</string>
-			<key>JobNameValue</key>
-			<string>Dokument1</string>
-			<key>KCCollate</key>
-			<string>PrnDef</string>
-			<key>KmCustomBoxPromptFlag</key>
-			<string>Off</string>
-			<key>KmEmailSettingsEnabled</key>
-			<string>Off</string>
-			<key>KmJobSettingsEnabled</key>
-			<string>Off</string>
-			<key>MediaType</key>
-			<string>PrnDef</string>
-			<key>PaperInfoIsSuggested</key>
-			<true/>
-			<key>Resolution</key>
-			<string>600dpi</string>
-			<key>StapleStatus</key>
-			<string>273</string>
-			<key>com.apple.print.PageToPaperMappingAllowScalingUp</key>
-			<true/>
-			<key>com.apple.print.PageToPaperMappingMediaName</key>
-			<string>A4</string>
-			<key>com.apple.print.PageToPaperMappingType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopies</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopyCollate</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMDestinationType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMDuplexing</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMFirstPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
-			<false/>
-			<key>com.apple.print.PrintSettings.PMLayoutRows</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMOrientation</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMPageRange</key>
-			<array>
-				<integer>1</integer>
-				<integer>2147483647</integer>
-			</array>
-			<key>com.apple.print.subTicket.paper_info_ticket</key>
-			<dict>
-				<key>PMPPDPaperCodeName</key>
-				<string>A4</string>
-				<key>PMPPDTranslationStringPaperName</key>
-				<string>A4</string>
-				<key>PMTiogaPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
-				<array>
-					<integer>0</integer>
-					<integer>0</integer>
-					<real>806</real>
-					<real>559</real>
-				</array>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPaperRect</key>
-				<array>
-					<real>-18</real>
-					<real>-18</real>
-					<real>824</real>
-					<real>577</real>
-				</array>
-				<key>com.apple.print.PaperInfo.ppd.PMPaperName</key>
-				<string>A4</string>
-				<key>com.apple.print.ticket.type</key>
-				<string>com.apple.print.PaperInfoTicket</string>
-			</dict>
-			<key>com.apple.print.ticket.type</key>
-			<string>com.apple.print.PrintSettingsTicket</string>
-			<key>job-sheets</key>
-			<string>none</string>
-		</dict>
-	</dict>
-	<key>Standard Qualität 1:1 SW A4</key>
-	<dict>
-		<key>com.apple.print.preset.id</key>
-		<string>Standard Qualität 1:1 SW A4</string>
-		<key>com.apple.print.preset.settings</key>
-		<dict>
-			<key>AP_D_InputSlot</key>
-			<string></string>
-			<key>DuplexBindingEdge</key>
-			<integer>3</integer>
-			<key>PaperInfoIsSuggested</key>
-			<true/>
-			<key>StapleStatus</key>
-			<string>273</string>
-			<key>com.apple.print.PageToPaperMappingAllowScalingUp</key>
-			<true/>
-			<key>com.apple.print.PageToPaperMappingMediaName</key>
-			<string>A4</string>
-			<key>com.apple.print.PageToPaperMappingType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopies</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopyCollate</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMDestinationType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMDuplexing</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMFirstPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
-			<false/>
-			<key>com.apple.print.PrintSettings.PMLayoutRows</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMOrientation</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMPageRange</key>
-			<array>
-				<integer>1</integer>
-				<integer>2147483647</integer>
-			</array>
-			<key>com.apple.print.subTicket.paper_info_ticket</key>
-			<dict>
-				<key>PMPPDPaperCodeName</key>
-				<string>A4</string>
-				<key>PMPPDTranslationStringPaperName</key>
-				<string>A4</string>
-				<key>PMTiogaPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
-				<array>
-					<integer>0</integer>
-					<integer>0</integer>
-					<real>819.21258544921875</real>
-					<real>572.598388671875</real>
-				</array>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPaperRect</key>
-				<array>
-					<real>-11.33856201171875</real>
-					<real>-11.338600158691406</real>
-					<real>830.55120849609375</real>
-					<real>583.93695068359375</real>
-				</array>
-				<key>com.apple.print.PaperInfo.ppd.PMPaperName</key>
-				<string>A4</string>
-				<key>com.apple.print.ticket.type</key>
-				<string>com.apple.print.PaperInfoTicket</string>
-			</dict>
-			<key>com.apple.print.ticket.type</key>
-			<string>com.apple.print.PrintSettingsTicket</string>
-			<key>job-sheets</key>
-			<string>none</string>
-		</dict>
-	</dict>
-	<key>Standard Qualität 2:1 Duplex SW A4 </key>
-	<dict>
-		<key>com.apple.print.preset.id</key>
-		<string>Standard Qualität 2:1 Duplex SW A4 </string>
-		<key>com.apple.print.preset.settings</key>
-		<dict>
-			<key>AP_D_InputSlot</key>
-			<string></string>
-			<key>DuplexBindingEdge</key>
-			<integer>3</integer>
-			<key>PaperInfoIsSuggested</key>
-			<true/>
-			<key>StapleStatus</key>
-			<string>274</string>
-			<key>com.apple.print.PageToPaperMappingAllowScalingUp</key>
-			<true/>
-			<key>com.apple.print.PageToPaperMappingMediaName</key>
-			<string>A4</string>
-			<key>com.apple.print.PageToPaperMappingType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopies</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopyCollate</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMDestinationType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMDuplexing</key>
-			<integer>3</integer>
-			<key>com.apple.print.PrintSettings.PMFirstPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMLayoutRows</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMOrientation</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMPageRange</key>
-			<array>
-				<integer>1</integer>
-				<integer>2147483647</integer>
-			</array>
-			<key>com.apple.print.subTicket.paper_info_ticket</key>
-			<dict>
-				<key>PMPPDPaperCodeName</key>
-				<string>A4</string>
-				<key>PMPPDTranslationStringPaperName</key>
-				<string>A4</string>
-				<key>PMTiogaPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
-				<array>
-					<integer>0</integer>
-					<integer>0</integer>
-					<real>819.21258544921875</real>
-					<real>572.598388671875</real>
-				</array>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPaperRect</key>
-				<array>
-					<real>-11.33856201171875</real>
-					<real>-11.338600158691406</real>
-					<real>830.55120849609375</real>
-					<real>583.93695068359375</real>
-				</array>
-				<key>com.apple.print.PaperInfo.ppd.PMPaperName</key>
-				<string>A4</string>
-				<key>com.apple.print.ticket.type</key>
-				<string>com.apple.print.PaperInfoTicket</string>
-			</dict>
-			<key>com.apple.print.ticket.type</key>
-			<string>com.apple.print.PrintSettingsTicket</string>
-			<key>job-sheets</key>
-			<string>none</string>
-		</dict>
-	</dict>
-	<key>Standard Qualität 2:1 SW A4</key>
-	<dict>
-		<key>com.apple.print.preset.id</key>
-		<string>Standard Qualität 2:1 SW A4</string>
-		<key>com.apple.print.preset.settings</key>
-		<dict>
-			<key>AP_D_InputSlot</key>
-			<string></string>
-			<key>DuplexBindingEdge</key>
-			<integer>3</integer>
-			<key>PaperInfoIsSuggested</key>
-			<true/>
-			<key>StapleStatus</key>
-			<string>274</string>
-			<key>com.apple.print.PageToPaperMappingAllowScalingUp</key>
-			<true/>
-			<key>com.apple.print.PageToPaperMappingMediaName</key>
-			<string>A4</string>
-			<key>com.apple.print.PageToPaperMappingType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopies</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMCopyCollate</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMDestinationType</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMDuplexing</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMFirstPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLastPage</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutColumns</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMLayoutNUp</key>
-			<true/>
-			<key>com.apple.print.PrintSettings.PMLayoutRows</key>
-			<integer>1</integer>
-			<key>com.apple.print.PrintSettings.PMOrientation</key>
-			<integer>2</integer>
-			<key>com.apple.print.PrintSettings.PMPageRange</key>
-			<array>
-				<integer>1</integer>
-				<integer>2147483647</integer>
-			</array>
-			<key>com.apple.print.subTicket.paper_info_ticket</key>
-			<dict>
-				<key>PMPPDPaperCodeName</key>
-				<string>A4</string>
-				<key>PMPPDTranslationStringPaperName</key>
-				<string>A4</string>
-				<key>PMTiogaPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMPaperName</key>
-				<string>iso-a4</string>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPageRect</key>
-				<array>
-					<integer>0</integer>
-					<integer>0</integer>
-					<real>819.21258544921875</real>
-					<real>572.598388671875</real>
-				</array>
-				<key>com.apple.print.PaperInfo.PMUnadjustedPaperRect</key>
-				<array>
-					<real>-11.33856201171875</real>
-					<real>-11.338600158691406</real>
-					<real>830.55120849609375</real>
-					<real>583.93695068359375</real>
-				</array>
-				<key>com.apple.print.PaperInfo.ppd.PMPaperName</key>
-				<string>A4</string>
-				<key>com.apple.print.ticket.type</key>
-				<string>com.apple.print.PaperInfoTicket</string>
-			</dict>
-			<key>com.apple.print.ticket.type</key>
-			<string>com.apple.print.PrintSettingsTicket</string>
-			<key>job-sheets</key>
-			<string>none</string>
-		</dict>
-	</dict>
 	<key>com.apple.print.customPresetNames</key>
 	<array>
-		<string>A4 SW 1:1 Super</string>
 		<string>A4 SW 1:1 Normal</string>
 		<string>A4 SW 1:1 Normal Duplex</string>
+		<string>A4 SW 1:1 Super</string>
 		<string>A4 SW 2:1 Entwurf Duplex</string>
 		<string>A4 SW 2:1 Normal</string>
 		<string>A4 SW 2:1 Normal Duplex</string>
 	</array>
 	<key>com.apple.print.lastPresetPref</key>
-	<string>Standard Qualität 1:1 Duplex SW A4</string>
+	<string>A4 SW 1:1 Normal</string>
 	<key>com.apple.print.lastPresetPrefType</key>
 	<integer>4</integer>
 	<key>com.apple.print.lastUsedSettingsPref</key>
