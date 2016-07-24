@@ -130,9 +130,6 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 /usr/bin/defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
-#Terminal Notifier installieren
-sudo gem install terminal-notifier
-
 #### Kontakte
 /usr/bin/defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingFirstName sortingLastName"
 /usr/bin/defaults write com.apple.AddressBook ABBirthDayVisible -int 1
@@ -152,7 +149,7 @@ sudo gem install terminal-notifier
 /usr/bin/defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 # Automatically retrieve CalDAV invitations from Mail.
-/usr/bin/defaults write com.apple.mail.plist AddInvitationsToICalAutomatically -bool true
+/usr/bin/defaults write com.apple.mail.plist AddInvitationsToICalAutomatically -bool false
 
 ##### Nachrichten
 /usr/bin/defaults write com.apple.iChat.plist Unified.EnableGroups -bool No
