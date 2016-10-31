@@ -50,12 +50,17 @@ sudo dscl . create /Users/pbimaintenance IsHidden 1
 
 # Login-Bildschirm konfigurieren
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "www.point-blank-international.com"
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -integer 5
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -integer 3
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
-sudo touch /System/Library/PrivateFrameworks/EFILogin.framework/Resources/EFIResourceBuilder.bundle/Contents/Resources
+
+# Sync EFI login screen with com.apple.loginwindow
+sudo rm -f /System/Library/Caches/com.apple.corestorage/EFILoginLocalizations/*.efires
+# Throws an error as of 10.11
+#sudo touch /System/Library/PrivateFrameworks/EFILogin.framework/Resources/EFIResourceBuilder.bundle/Contents/Resources
 
 # Deactivate fast user switching and guest account
-sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
+# 2016/07 Now managed by configuration profile
+# sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
 
 # Softwareupdates automatisch herunterladen und installieren
@@ -69,8 +74,9 @@ echo "PBI Setup Setup ARD v1.0 installed"
 #### Systemeinstellungen
 
 ## Activate Firewall and allow signed apps only
-sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
-sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on
+# 2016/10 Now managed by configuration profile (macOS 10.12+)
+# sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+# sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on
 
 ## Hostnamen für den Mac im Netzwerk definieren
 sudo scutil --set ComputerName "$inventarnummer-$initialen"
@@ -83,9 +89,10 @@ dscacheutil -flushcache
 sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
 
 ## Bildschirmschoner
-/usr/bin/defaults write com.apple.screensaver askForPassword -bool true
-/usr/bin/defaults write com.apple.screensaver askForPasswordDelay -int 5
-/usr/bin/defaults write com.apple.screensaver idleTime -int 0
+# 2016/07 Now managed by configuration profile
+# /usr/bin/defaults write com.apple.screensaver askForPassword -bool true
+# /usr/bin/defaults write com.apple.screensaver askForPasswordDelay -int 5
+# /usr/bin/defaults write com.apple.screensaver idleTime -int 0
 
 ## Energiesparen
 sudo pmset -b sleep 15 displaysleep 5
@@ -95,7 +102,8 @@ sudo pmset -c sleep 60 displaysleep 15
 osascript -e "set volume output volume 19"
 
 # Textkorrektur
-/usr/bin/defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+# 2016/07 Now managed by configuration profile
+#/usr/bin/defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
 #Trackpad
 # Tap to click.
@@ -103,22 +111,26 @@ osascript -e "set volume output volume 19"
 /usr/bin/defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.mouse.tapBehavior -int 1
 
-#Prozent in Menüleiste anzeigen
-/usr/bin/defaults write com.apple.menuextra.battery.plist ShowPercent -string "YES"
+# Prozent in Menüleiste anzeigen
+# 2016/07 Now managed by configuration profile
+# /usr/bin/defaults write com.apple.menuextra.battery.plist ShowPercent -string "YES"
 
-#Details in Druckerfenster anzeigen
-/usr/bin/defaults write -g PMPrintingExpandedStateForPrint2 -bool true
+# Details in Druckerfenster anzeigen
+# Does no longer work as of 10.9
+#/usr/bin/defaults write -g PMPrintingExpandedStateForPrint2 -bool true
 
-#Set default save location to Mac.
-/usr/bin/defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
+# Set default save location to Mac.
+# 2016/07 Now managed by configuration profile
+#/usr/bin/defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
-#Lautlos klicken
+# Lautlos klicken
 /usr/bin/defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 1
 
 ## Safari
 
-#Startseite auf hub.pbi.online setzen
-/usr/bin/defaults write com.apple.Safari HomePage http://hub.pbi.online
+# Startseite auf hub.pbi.online setzen
+# 2016/07 Does not work on El Capitan anymore
+# /usr/bin/defaults write com.apple.Safari HomePage http://hub.pbi.online
 
 #Neuer Tab / neues Fenster zeigt Homepage
 /usr/bin/defaults write com.apple.Safari NewTabBehavior -int 0
@@ -128,7 +140,8 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 /usr/bin/defaults write com.apple.Safari ShowFavoritesBar-v2 -bool true
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
-/usr/bin/defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+# 2016/07 Now managed by configuration profile
+# /usr/bin/defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 #### Kontakte
 /usr/bin/defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingFirstName sortingLastName"
@@ -147,9 +160,6 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 /usr/bin/defaults write com.apple.iCal "TimeZone support enabled" -bool true
 # Kalenderwochen anzeigen
 /usr/bin/defaults write com.apple.iCal "Show Week Numbers" -bool true
-
-# Automatically retrieve CalDAV invitations from Mail.
-/usr/bin/defaults write com.apple.mail.plist AddInvitationsToICalAutomatically -bool false
 
 ##### Nachrichten
 /usr/bin/defaults write com.apple.iChat.plist Unified.EnableGroups -bool No
@@ -170,17 +180,22 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 /usr/libexec/PlistBuddy -c "Add :menuExtras:0 string '/System/Library/CoreServices/Menu Extras/Volume.menu'" ~/Library/Preferences/com.apple.systemuiserver.plist
 
 #### Mail
-/usr/bin/defaults write com.apple.mail AddInvitationsToICalAutomatically -bool true
+/usr/bin/defaults write com.apple.mail AddInvitationsToICalAutomatically -bool false
 # If outgoing server is unavailable automatically try sending later.
 /usr/bin/defaults write com.apple.mail SuppressDeliveryFailure -int 1
 /usr/bin/defaults write com.apple.mail MailSound -string ""
+/usr/bin/defaults write com.apple.mail JunkMailBehavior -int 0
+/usr/bin/defaults write com.apple.mail AddressDisplayMode -int 3
+/usr/bin/defaults write com.apple.mail ShowBccHeader -int 1
+/usr/bin/defaults write com.apple.mail ShowHeaderDetails -bool true
 
 #### Skype Plugin
-/usr/bin/defaults write com.ecamm.CallRecorder AUTO_RECORD -bool true
-/usr/bin/defaults write com.ecamm.CallRecorder DISCARD_SECONDS -int 5
-/usr/bin/defaults write com.ecamm.CallRecorder DISCARD_SHORT_CALLS -bool true
-/usr/bin/defaults write com.ecamm.CallRecorder AUDIO_ONLY -bool true
-/usr/bin/defaults write com.ecamm.CallRecorder VIDEO_QUALITY2 -int 1
+# 2016/07 Now managed by configuration profile
+# /usr/bin/defaults write com.ecamm.CallRecorder AUTO_RECORD -bool true
+# /usr/bin/defaults write com.ecamm.CallRecorder DISCARD_SECONDS -int 5
+# /usr/bin/defaults write com.ecamm.CallRecorder DISCARD_SHORT_CALLS -bool true
+# /usr/bin/defaults write com.ecamm.CallRecorder AUDIO_ONLY -bool true
+# /usr/bin/defaults write com.ecamm.CallRecorder VIDEO_QUALITY2 -int 1
 
 #### Tunnelblick defaults v1.1
 
@@ -217,8 +232,9 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 ## Datum in Menüleiste anzeigen
 /usr/bin/defaults write com.apple.menuextra.clock DateFormat -string "EEE d. MMM  HH:mm"
 
-## Set the icon size of Dock items to 46 pixels
-/usr/bin/defaults write com.apple.dock tilesize -int 46
+## Set the icon size of Dock items to 36 pixels
+# 2016/08 Now managed by configuration profile
+# /usr/bin/defaults write com.apple.dock tilesize -int 36
 
 ## Set a default program for a fileytpe, i.e. MP3 and WAV to open in Quicktime
 /usr/bin/defaults write com.apple.LaunchServices	LSHandlers -array-add \
@@ -237,6 +253,12 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/
 
 # Install PBI Signature LaunchAgent
 bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
+
+# Activates "Require a password to unlock each System Preferences pane"
+/usr/bin/security authorizationdb read system.preferences > /tmp/system.preferences.plist
+/usr/bin/defaults write /tmp/system.preferences.plist shared -bool false
+/usr/bin/security authorizationdb write system.preferences < /tmp/system.preferences.plist
+/bin/rm -f /tmp/system.preferences.plist
 
 ## Change user picture
 # 1. Curl PBI user pictures tifs from web source into /Library/User\ Pictures/PBI
