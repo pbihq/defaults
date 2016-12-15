@@ -65,8 +65,10 @@ sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow GuestEna
 
 # Softwareupdates automatisch herunterladen und installieren
 sudo softwareupdate --schedule on
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool true
+
+# 2016/12 Now managed by configuration profile
+# sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
+# sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool true
 
 logger "PBI Setup Setup ARD v1.0 installed"
 echo "PBI Setup Setup ARD v1.0 installed"
@@ -107,7 +109,7 @@ osascript -e "set volume output volume 19"
 
 #Trackpad
 # Tap to click.
-/usr/bin/defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
+# /usr/bin/defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 /usr/bin/defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.mouse.tapBehavior -int 1
 
@@ -123,7 +125,7 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 # 2016/07 Now managed by configuration profile
 #/usr/bin/defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Lautlos klicken
+# Lautlos klicken. Does not work on 2016 MacBook Pro generation
 /usr/bin/defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 1
 
 ## Safari
@@ -154,12 +156,14 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 /usr/bin/defaults write com.apple.iCal "last minute of work hours" -int 1200
 # Show 16 hours at a time.
 /usr/bin/defaults write com.apple.iCal "number of hours displayed" -int 16
+
+## 2016/12 Now managed by configuration profile
 # Show Birthdays calendar.
-/usr/bin/defaults write com.apple.iCal "display birthdays calendar" -bool true
+# /usr/bin/defaults write com.apple.iCal "display birthdays calendar" -bool true
 # Turn on time zone support
-/usr/bin/defaults write com.apple.iCal "TimeZone support enabled" -bool true
+# /usr/bin/defaults write com.apple.iCal "TimeZone support enabled" -bool true
 # Kalenderwochen anzeigen
-/usr/bin/defaults write com.apple.iCal "Show Week Numbers" -bool true
+# /usr/bin/defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 ##### Nachrichten
 /usr/bin/defaults write com.apple.iChat.plist Unified.EnableGroups -bool No
@@ -200,34 +204,34 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 #### Tunnelblick defaults v1.1
 
 # Don't check for IP address changes
-/usr/bin/defaults write net.tunnelblick.tunnelblick askedUserIfOKToCheckThatIPAddressDidNotChangeAfterConnection -bool TRUE
+/usr/bin/defaults write net.tunnelblick.tunnelblick askedUserIfOKToCheckThatIPAddressDidNotChangeAfterConnection -bool true
 
 # Don't send anonymized user profile
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUSendProfileInfo -bool FALSE
+/usr/bin/defaults write net.tunnelblick.tunnelblick SUSendProfileInfo -bool false
 
 # Check for and download updates automatically
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUEnableAutomaticChecks -bool TRUE
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUAutomaticallyUpdate -bool TRUE
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateAutomatically -bool TRUE
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateCheckAutomatically -bool TRUE
+/usr/bin/defaults write net.tunnelblick.tunnelblick SUEnableAutomaticChecks -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick SUAutomaticallyUpdate -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick updateAutomatically -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick updateCheckAutomatically -bool true
 
 # Don't submit profile info
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateSendProfileInfo -bool FALSE
+/usr/bin/defaults write net.tunnelblick.tunnelblick updateSendProfileInfo -bool false
 
 # Don't show startup splash screen
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowSplashScreen -bool TRUE
+/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowSplashScreen -bool true
 
 # Only show window display when connecting
 /usr/bin/defaults write net.tunnelblick.tunnelblick connectionWindowDisplayCriteria -string "showWhenConnecting"
 
 # Don't show window display on mouseover
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowNotificationWindowOnMouseover -bool TRUE
+/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowNotificationWindowOnMouseover -bool true
 
 # Don't show disconnected window display
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowDisconnectedNotificationWindows -bool TRUE
+/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowDisconnectedNotificationWindows -bool true
 
 # Ignore IP address change warning
-/usr/bin/defaults write net.tunnelblick.tunnelblick skipWarningThatIPAddressDidNotChangeAfterConnection -bool TRUE
+/usr/bin/defaults write net.tunnelblick.tunnelblick skipWarningThatIPAddressDidNotChangeAfterConnection -bool true
 
 ## Datum in Menüleiste anzeigen
 /usr/bin/defaults write com.apple.menuextra.clock DateFormat -string "EEE d. MMM  HH:mm"
@@ -244,6 +248,12 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 
 ## Disable Time Machine's pop-up message whenever an external drive is plugged in
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Disable automatic iPhone synchronisation in iTunes
+defaults -currentHost write com.apple.iTunes dontAutomaticallySyncIPods -bool true
+
+# Prevent Photos from opening up automatically when iPhone is plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 # Install latest version of PBI 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
