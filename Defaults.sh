@@ -3,7 +3,7 @@
 # PBI Defaults v2.3 | November 2015
 
 ## Define variables
-seriennummer=$(system_profiler SPHardwareDataType | grep "Serial Number" | awk '{print $4}')
+seriennummer=$(system_profiler SPHardwareDataType | awk '/Serial Number/ { print $4 }')
 mitarbeiter=$(id -F)
 
 ## Ask for some user input at the beginning
@@ -50,8 +50,8 @@ sudo dscl . create /Users/pbimaintenance IsHidden 1
 
 # Login-Bildschirm konfigurieren
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "www.point-blank-international.com"
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -integer 3
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 3
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool YES
 
 # Sync EFI login screen with com.apple.loginwindow
 sudo rm -f /System/Library/Caches/com.apple.corestorage/EFILoginLocalizations/*.efires
@@ -60,15 +60,15 @@ sudo rm -f /System/Library/Caches/com.apple.corestorage/EFILoginLocalizations/*.
 
 # Deactivate fast user switching and guest account
 # 2016/07 Now managed by configuration profile
-# sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+# sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool NO
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
 
 # Softwareupdates automatisch herunterladen und installieren
 sudo softwareupdate --schedule on
 
 # 2016/12 Now managed by configuration profile
-# sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
-# sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool true
+# sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool YES
+# sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool YES
 
 logger "PBI Setup Setup ARD v1.0 installed"
 echo "PBI Setup Setup ARD v1.0 installed"
@@ -92,7 +92,7 @@ sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
 
 ## Bildschirmschoner
 # 2016/07 Now managed by configuration profile
-# /usr/bin/defaults write com.apple.screensaver askForPassword -bool true
+# /usr/bin/defaults write com.apple.screensaver askForPassword -bool YES
 # /usr/bin/defaults write com.apple.screensaver askForPasswordDelay -int 5
 # /usr/bin/defaults write com.apple.screensaver idleTime -int 0
 
@@ -105,12 +105,12 @@ osascript -e "set volume output volume 19"
 
 # Textkorrektur
 # 2016/07 Now managed by configuration profile
-#/usr/bin/defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+#/usr/bin/defaults write -g NSAutomaticSpellingCorrectionEnabled -bool NO
 
 #Trackpad
 # Tap to click.
 # /usr/bin/defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
-/usr/bin/defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+/usr/bin/defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool YES
 sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.mouse.tapBehavior -int 1
 
 # Prozent in Menüleiste anzeigen
@@ -119,11 +119,11 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 
 # Details in Druckerfenster anzeigen
 # Does no longer work as of 10.9
-#/usr/bin/defaults write -g PMPrintingExpandedStateForPrint2 -bool true
+#/usr/bin/defaults write -g PMPrintingExpandedStateForPrint2 -bool YES
 
 # Set default save location to Mac.
 # 2016/07 Now managed by configuration profile
-#/usr/bin/defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
+#/usr/bin/defaults write -g NSDocumentSaveNewDocumentsToCloud -bool NO
 
 # Lautlos klicken. Does not work on 2016 MacBook Pro generation
 /usr/bin/defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 1
@@ -139,11 +139,11 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 /usr/bin/defaults write com.apple.Safari NewWindowBehavior -int 0
 
 #Favoritenleiste in Safari einblenden
-/usr/bin/defaults write com.apple.Safari ShowFavoritesBar-v2 -bool true
+/usr/bin/defaults write com.apple.Safari ShowFavoritesBar-v2 -bool YES
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 # 2016/07 Now managed by configuration profile
-# /usr/bin/defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+# /usr/bin/defaults write com.apple.Safari AutoOpenSafeDownloads -bool NO
 
 #### Kontakte
 /usr/bin/defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingFirstName sortingLastName"
@@ -159,11 +159,11 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 
 ## 2016/12 Now managed by configuration profile
 # Show Birthdays calendar.
-# /usr/bin/defaults write com.apple.iCal "display birthdays calendar" -bool true
+# /usr/bin/defaults write com.apple.iCal "display birthdays calendar" -bool YES
 # Turn on time zone support
-# /usr/bin/defaults write com.apple.iCal "TimeZone support enabled" -bool true
+# /usr/bin/defaults write com.apple.iCal "TimeZone support enabled" -bool YES
 # Kalenderwochen anzeigen
-# /usr/bin/defaults write com.apple.iCal "Show Week Numbers" -bool true
+# /usr/bin/defaults write com.apple.iCal "Show Week Numbers" -bool YES
 
 ##### Nachrichten
 /usr/bin/defaults write com.apple.iChat.plist Unified.EnableGroups -bool No
@@ -184,60 +184,60 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 /usr/libexec/PlistBuddy -c "Add :menuExtras:0 string '/System/Library/CoreServices/Menu Extras/Volume.menu'" ~/Library/Preferences/com.apple.systemuiserver.plist
 
 #### Mail
-/usr/bin/defaults write com.apple.mail AddInvitationsToICalAutomatically -bool false
+/usr/bin/defaults write com.apple.mail AddInvitationsToICalAutomatically -bool NO
 # If outgoing server is unavailable automatically try sending later.
 /usr/bin/defaults write com.apple.mail SuppressDeliveryFailure -int 1
 /usr/bin/defaults write com.apple.mail MailSound -string ""
 /usr/bin/defaults write com.apple.mail JunkMailBehavior -int 0
 /usr/bin/defaults write com.apple.mail AddressDisplayMode -int 3
 /usr/bin/defaults write com.apple.mail ShowBccHeader -int 1
-/usr/bin/defaults write com.apple.mail ShowHeaderDetails -bool true
+/usr/bin/defaults write com.apple.mail ShowHeaderDetails -bool YES
 
 #### Skype Plugin
 # 2016/07 Now managed by configuration profile
-# /usr/bin/defaults write com.ecamm.CallRecorder AUTO_RECORD -bool true
+# /usr/bin/defaults write com.ecamm.CallRecorder AUTO_RECORD -bool YES
 # /usr/bin/defaults write com.ecamm.CallRecorder DISCARD_SECONDS -int 5
-# /usr/bin/defaults write com.ecamm.CallRecorder DISCARD_SHORT_CALLS -bool true
-# /usr/bin/defaults write com.ecamm.CallRecorder AUDIO_ONLY -bool true
+# /usr/bin/defaults write com.ecamm.CallRecorder DISCARD_SHORT_CALLS -bool YES
+# /usr/bin/defaults write com.ecamm.CallRecorder AUDIO_ONLY -bool YES
 # /usr/bin/defaults write com.ecamm.CallRecorder VIDEO_QUALITY2 -int 1
 
 #### Tunnelblick defaults v1.1
 
 # Don't check for IP address changes
-/usr/bin/defaults write net.tunnelblick.tunnelblick askedUserIfOKToCheckThatIPAddressDidNotChangeAfterConnection -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick askedUserIfOKToCheckThatIPAddressDidNotChangeAfterConnection -bool YES
 
 # Don't send anonymized user profile
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUSendProfileInfo -bool false
+/usr/bin/defaults write net.tunnelblick.tunnelblick SUSendProfileInfo -bool NO
 
 # Check for and download updates automatically
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUEnableAutomaticChecks -bool true
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUAutomaticallyUpdate -bool true
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateAutomatically -bool true
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateCheckAutomatically -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick SUEnableAutomaticChecks -bool YES
+/usr/bin/defaults write net.tunnelblick.tunnelblick SUAutomaticallyUpdate -bool YES
+/usr/bin/defaults write net.tunnelblick.tunnelblick updateAutomatically -bool YES
+/usr/bin/defaults write net.tunnelblick.tunnelblick updateCheckAutomatically -bool YES
 
 # Don't submit profile info
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateSendProfileInfo -bool false
+/usr/bin/defaults write net.tunnelblick.tunnelblick updateSendProfileInfo -bool NO
 
 # Don't show startup splash screen
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowSplashScreen -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowSplashScreen -bool YES
 
 # Only show window display when connecting
 /usr/bin/defaults write net.tunnelblick.tunnelblick connectionWindowDisplayCriteria -string "showWhenConnecting"
 
 # Don't show window display on mouseover
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowNotificationWindowOnMouseover -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowNotificationWindowOnMouseover -bool YES
 
 # Don't show disconnected window display
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowDisconnectedNotificationWindows -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowDisconnectedNotificationWindows -bool YES
 
 # Ignore IP address change warning
-/usr/bin/defaults write net.tunnelblick.tunnelblick skipWarningThatIPAddressDidNotChangeAfterConnection -bool true
+/usr/bin/defaults write net.tunnelblick.tunnelblick skipWarningThatIPAddressDidNotChangeAfterConnection -bool YES
 
 ## Datum in Menüleiste anzeigen
 /usr/bin/defaults write com.apple.menuextra.clock DateFormat -string "EEE d. MMM  HH:mm"
 
 ## Set the icon size of Dock items to 36 pixels
-# 2016/08 Now managed by configuration profile
+# 2016/08 Now set by configuration profile
 # /usr/bin/defaults write com.apple.dock tilesize -int 36
 
 ## Set a default program for a fileytpe, i.e. MP3 and WAV to open in Quicktime
@@ -247,13 +247,14 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 	'{LSHandlerContentType = "com.microsoft.waveform-audio"; LSHandlerRoleAll = "com.apple.quicktimeplayerx";}'
 
 ## Disable Time Machine's pop-up message whenever an external drive is plugged in
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
 
 # Disable automatic iPhone synchronisation in iTunes
-defaults -currentHost write com.apple.iTunes dontAutomaticallySyncIPods -bool true
+defaults -currentHost write com.apple.iTunes dontAutomaticallySyncIPods -bool YES
 
 # Prevent Photos from opening up automatically when iPhone is plugged in
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
+defaults -currentHost write com.apple.Photos disableHotPlug -bool YES
 
 # Install latest version of PBI 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
@@ -266,7 +267,7 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature
 
 # Activates "Require a password to unlock each System Preferences pane"
 /usr/bin/security authorizationdb read system.preferences > /tmp/system.preferences.plist
-/usr/bin/defaults write /tmp/system.preferences.plist shared -bool false
+/usr/bin/defaults write /tmp/system.preferences.plist shared -bool NO
 /usr/bin/security authorizationdb write system.preferences < /tmp/system.preferences.plist
 /bin/rm -f /tmp/system.preferences.plist
 
