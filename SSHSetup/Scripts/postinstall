@@ -1,5 +1,5 @@
 #!/bin/bash
-# PBI SSH Setup v1.5
+# PBI-SSH-Setup v2.0
 
 ## Define variable(s)
 operatingsystem=$(sw_vers -productVersion)
@@ -12,7 +12,7 @@ case $operatingsystem in
 	10.12*) sshd_config="/private/etc/ssh/sshd_config";;
 	*)
 		/bin/echo "Error: This version of macOS is not supported."
-		/usr/bin/logger "Error: SSHClientSetup installation failed."
+		/usr/bin/logger "Error: PBI-SSH-Setup installation failed."
 		exit 1
 		;;
 esac
@@ -48,5 +48,5 @@ EOF
 ## Activate SSH remote login
 /usr/sbin/systemsetup -f -setremotelogin on
 
-/usr/bin/logger "PBI SSH Setup installiert"
+/usr/bin/logger "PBI-SSH-Setup has been installed."
 exit 0
