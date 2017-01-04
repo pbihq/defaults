@@ -250,14 +250,14 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
 
 # Disable automatic iPhone synchronisation in iTunes
-defaults -currentHost write com.apple.iTunes dontAutomaticallySyncIPods -bool YES
+/usr/bin/defaults -currentHost write com.apple.iTunes dontAutomaticallySyncIPods -bool YES
 
 # Prevent Photos from opening up automatically when iPhone is plugged in
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
-defaults -currentHost write com.apple.Photos disableHotPlug -bool YES
+/usr/bin/defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
+/usr/bin/defaults -currentHost write com.apple.Photos disableHotPlug -bool YES
 
 # Setup Touch Bar with brightness, volume, mute and screen lock buttons
-defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
+/usr/bin/defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
 '(com.apple.system.brightness, com.apple.system.volume, com.apple.system.mute, com.apple.system.screen-lock)'
 
 # Install latest version of PBI 'Status' script
