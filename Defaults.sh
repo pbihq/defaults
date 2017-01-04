@@ -256,6 +256,10 @@ defaults -currentHost write com.apple.iTunes dontAutomaticallySyncIPods -bool YE
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 defaults -currentHost write com.apple.Photos disableHotPlug -bool YES
 
+# Setup Touch Bar with brightness, volume, mute and screen lock buttons
+defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
+'(com.apple.system.brightness, com.apple.system.volume, com.apple.system.mute, com.apple.system.screen-lock)'
+
 # Install latest version of PBI 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
 
@@ -287,7 +291,7 @@ echo "Systemeinstellungen gesetzt."
 ### Kill affected applications
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "Dock" \
-	"Finder" "Mail" "Messages" "Safari" "SystemUIServer" "iCal" "cfprefsd"; do
+	"Finder" "Mail" "Messages" "Safari" "SystemUIServer" "iCal" "cfprefsd" "ControlStrip"; do
 	killall "${app}" &> /dev/null
 done
 
