@@ -179,7 +179,7 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 /usr/libexec/PlistBuddy -c "Add :CustomAwayMessages:1 string 'Mittagspause'" ~/Library/Preferences/com.apple.iChat.plist
 /usr/libexec/PlistBuddy -c "Add :CustomAwayMessages:2 string 'IT-Support'" ~/Library/Preferences/com.apple.iChat.plist
 
-/usr/libexec/PlistBuddy -c "Add :menuExtras array" ~/Library/Preferences/com.apple.systemuiserver.plist
+# /usr/libexec/PlistBuddy -c "Add :menuExtras array" ~/Library/Preferences/com.apple.systemuiserver.plist
 /usr/libexec/PlistBuddy -c "Add :menuExtras:0 string '/System/Library/CoreServices/Menu Extras/Bluetooth.menu'" ~/Library/Preferences/com.apple.systemuiserver.plist
 /usr/libexec/PlistBuddy -c "Add :menuExtras:0 string '/System/Library/CoreServices/Menu Extras/Volume.menu'" ~/Library/Preferences/com.apple.systemuiserver.plist
 
