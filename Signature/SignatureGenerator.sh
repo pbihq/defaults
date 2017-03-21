@@ -17,7 +17,8 @@ linktitle="We’re featured in a new book on the future of Research and Design i
 ####################################
 
 imageurl="http://cdn.pbi.online/signature/banner/160411_CA_BookLaunch.png"
-banner="$(echo "<a href=\"$linkurl\" title=\"$linktitle\"><img src=\"$imageurl\" alt=\"Banner\" style=\"width:210px;height:auto;max-width:71%;border:0;outline:none;text-decoration:none;\"></a>")"
+#banner="$(echo "<a href=\"$linkurl\" title=\"$linktitle\"><img src=\"$imageurl\" alt=\"Banner\" style=\"width:210px;height:auto;max-width:71%;border:0;outline:none;text-decoration:none;\"></a>")"
+banner=""
 
 ####################################
 # Get User Input
@@ -88,7 +89,8 @@ Content-Type: text/html;
 <div style="max-width: 300px; line-height: 1.2em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #737577;">www.point-blank-international.com<br><br></div></a>
 
 <div style="max-width: 350px; line-height: 1.2em; font-size: 11.0px; font-family: Helvetica, Arial, sans-serif; color: #737577;">Gesch&auml;ftsf&uuml;hrer &#124; Managing Directors:<br>
-Dr. Barbara Lang, Dr. Gerhard Keim, Tobias Wenker<br>
+Dr. Barbara Lang, Christoph Welter,<br>
+Dr. Gerhard Keim, Tobias Wenker<br>
 Handelsregister &#124; Register of commerce:<br>
 Amtsgericht Charlottenburg, HRB 96988 B<br>
 Steuernummer &#124; Tax number: 30/475/30746<br>
