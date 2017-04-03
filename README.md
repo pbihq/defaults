@@ -24,7 +24,7 @@ Script to create Point-Blank e-mail signatures for individual persons
 
     bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureGenerator.sh)
 
-Webclips
+Web Clips
 ==================
 Script to install Point-Blank web clips
 
