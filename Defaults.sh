@@ -260,14 +260,17 @@ sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOff
 /usr/bin/defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
 '(com.apple.system.brightness, com.apple.system.volume, com.apple.system.mute, com.apple.system.screen-lock)'
 
+# Install PBI Signature LaunchAgent
+bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
+
 # Install latest version of PBI 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
 
 # Install PBI web clips
-bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/Webclips.sh)
+bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/InstallWebClips.sh)
 
-# Install PBI Signature LaunchAgent
-bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
+# Launch ad-hoc Signature Setter script
+bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureSetter.sh)
 
 # Activates "Require a password to unlock each System Preferences pane"
 /usr/bin/security authorizationdb read system.preferences > /tmp/system.preferences.plist

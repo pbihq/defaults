@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 ###############################################################################
-# Signature Updater
+# Signature Setter
 ###############################################################################
 # Prerequisites: Apple Mail Signature with name "PBI", assigned to PBI Mailadress
 # Compatible with macOS 10.11 and 10.12
