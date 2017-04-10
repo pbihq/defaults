@@ -1,10 +1,10 @@
-#!/bin/bash
-#
-# PBI Defaults v2.3 | November 2015
+#!/bin/bash -u
+
+# Point-Blank macOS and application defaults.
 
 ## Define variables
-seriennummer=$(system_profiler SPHardwareDataType | awk '/Serial Number/ { print $4 }')
-mitarbeiter=$(id -F)
+readonly seriennummer=$(system_profiler SPHardwareDataType | awk '/Serial Number/ { print $4 }')
+readonly mitarbeiter=$(id -F)
 
 ## Ask for some user input at the beginning
 clear
@@ -260,10 +260,10 @@ sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOff
 /usr/bin/defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
 '(com.apple.system.brightness, com.apple.system.volume, com.apple.system.mute, com.apple.system.screen-lock)'
 
-# Install PBI Signature LaunchAgent
+# Install Point-Blank SignatureLaunchAgent
 bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
 
-# Install latest version of PBI 'Status' script
+# Install latest version of Point-Blank 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
 
 # Install PBI web clips
@@ -292,10 +292,25 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature
 echo "Systemeinstellungen gesetzt."
 
 ### Kill affected applications
+declare -ra app=(\
+	"Activity Monitor"
+	"Address Book"
+	"Calendar"
+	"Contacts"
+	"Dock"
+	"Finder"
+	"Mail"
+	"Messages"
+	"Safari"
+	"SystemUIServer"
+	"iCal"
+	"ControlStrip"
+	"cfprefsd"
+	)
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "Dock" \
-	"Finder" "Mail" "Messages" "Safari" "SystemUIServer" "iCal" "cfprefsd" "ControlStrip"; do
-	killall "${app}" &> /dev/null
+for app in "${app[@]}"
+do
+	killall "$app" &> /dev/null
 done
 
 echo "PBI Defaults wurden installiert. Bitte Mac neustarten!"
