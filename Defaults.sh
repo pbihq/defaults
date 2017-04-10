@@ -8,14 +8,14 @@ readonly mitarbeiter=$(id -F)
 
 ## Ask for some user input at the beginning
 clear
-echo "Starte PBI Defaults Setup..."
+echo "Starte Point-Blank-Defaults-Setup..."
 echo
-read -p "Wie lautet die PBI Inventarnummer des Macs [$seriennummer]? " inventarnummer
+read -p "Wie lautet die Point-Blank-Inventarnummer des Macs [$seriennummer]? " inventarnummer
 	while [[ -z "$inventarnummer"  ]]; do
     	inventarnummer=$seriennummer
 	done
 echo
-read -p "Wie lauten die eindeutigen Initialen von $mitarbeiter bei PBI (z. B. RTh oder RTo)? " initialen
+read -p "Wie lauten die eindeutigen Initialen von $mitarbeiter bei Point-Blank (z. B. RTh oder TW)? " initialen
 	while [[ -z "$initialen"  ]]; do
     	initialen="FREI"
 	done
@@ -42,10 +42,10 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -clientopts -setmenuextra -menuextra yes
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -menu
 
-logger "PBI Setup Setup User + ARD config installed"
-echo "PBI Setup Setup User + ARD config installed"
+logger "Point-Blank Setup Setup User + ARD config installed"
+echo "Point-Blank Setup Setup User + ARD config installed"
 
-# PBI Maintenance ausblenden
+# Point-Blank Maintenance ausblenden
 sudo dscl . create /Users/pbimaintenance IsHidden 1
 
 # Login-Bildschirm konfigurieren
@@ -70,8 +70,8 @@ sudo softwareupdate --schedule on
 # sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool YES
 # sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool YES
 
-logger "PBI Setup Setup ARD v1.0 installed"
-echo "PBI Setup Setup ARD v1.0 installed"
+logger "Point-Blank Setup Setup ARD v1.0 installed"
+echo "Point-Blank Setup Setup ARD v1.0 installed"
 
 #### Systemeinstellungen
 
@@ -87,7 +87,7 @@ sudo scutil --set HostName "$inventarnummer-$initialen"
 sudo /usr/bin/defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$inventarnummer-$initialen"
 dscacheutil -flushcache
 
-## PBI NTP Setup
+## Point-Blank NTP Setup
 sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
 
 ## Bildschirmschoner
@@ -266,7 +266,7 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature
 # Install latest version of Point-Blank 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
 
-# Install PBI web clips
+# Install Point-Blank web clips
 bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/InstallWebClips.sh)
 
 # Launch ad-hoc Signature Setter script
@@ -279,10 +279,10 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature
 /bin/rm -f /tmp/system.preferences.plist
 
 ## Change user picture
-# 1. Curl PBI user pictures tifs from web source into /Library/User\ Pictures/PBI
+# 1. Curl Point-Blank user pictures tifs from web source into /Library/User\ Pictures/Point-Blank
 #sudo dscl . delete /Users/$USER jpegphoto
 #sudo dscl . delete /Users/$USER picture
-#sudo dscl . create /Users/$USER picture "/Library/User\ Pictures/PBI/$USER.tif"
+#sudo dscl . create /Users/$USER picture "/Library/User\ Pictures/Point-Blank/$USER.tif"
 #  This forces the system to rebuild the system caches along with the local directory cache.
 #sudo kextcache -system-caches
 
@@ -313,9 +313,9 @@ do
 	killall "$app" &> /dev/null
 done
 
-echo "PBI Defaults wurden installiert. Bitte Mac neustarten!"
+echo "Point-Blank Defaults wurden installiert. Bitte Mac neustarten!"
 echo
-logger "PBI Defaults wurden installiert."
+logger "Point-Blank Defaults wurden installiert."
 
 osascript -e 'tell app "loginwindow" to «event aevtrrst»'
 exit 0
