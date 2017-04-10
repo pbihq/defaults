@@ -49,7 +49,7 @@ echo "PBI Setup Setup User + ARD config installed"
 sudo dscl . create /Users/pbimaintenance IsHidden 1
 
 # Login-Bildschirm konfigurieren
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "www.point-blank-international.com"
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "www.point-blank.net"
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 3
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool YES
 
