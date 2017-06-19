@@ -12,7 +12,7 @@ echo "<?xml version="1.0" encoding="UTF-8"?>
 	<array>
 		<string>/bin/bash</string>
 		<string>-c</string>
-		<string>ping -c 1 8.8.8.8 &amp;&gt; /dev/null &amp;&amp; curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureSetup.sh | bash -s -- || sleep 600; ping -c 1 8.8.8.8 &amp;&gt; /dev/null &amp;&amp; curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureSetup.sh | bash -s --</string>
+		<string>ping -c 1 8.8.8.8 &amp;&gt; /dev/null &amp;&amp; curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureSetter.sh | bash -s -- || sleep 600; ping -c 1 8.8.8.8 &amp;&gt; /dev/null &amp;&amp; curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureSetter.sh | bash -s --</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
