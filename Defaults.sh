@@ -204,34 +204,34 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 #### Tunnelblick defaults v1.1
 
 # Don't check for IP address changes
-/usr/bin/defaults write net.tunnelblick.tunnelblick askedUserIfOKToCheckThatIPAddressDidNotChangeAfterConnection -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick askedUserIfOKToCheckThatIPAddressDidNotChangeAfterConnection -bool YES
 
 # Don't send anonymized user profile
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUSendProfileInfo -bool NO
+#/usr/bin/defaults write net.tunnelblick.tunnelblick SUSendProfileInfo -bool NO
 
 # Check for and download updates automatically
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUEnableAutomaticChecks -bool YES
-/usr/bin/defaults write net.tunnelblick.tunnelblick SUAutomaticallyUpdate -bool YES
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateAutomatically -bool YES
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateCheckAutomatically -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick SUEnableAutomaticChecks -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick SUAutomaticallyUpdate -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick updateAutomatically -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick updateCheckAutomatically -bool YES
 
 # Don't submit profile info
-/usr/bin/defaults write net.tunnelblick.tunnelblick updateSendProfileInfo -bool NO
+#/usr/bin/defaults write net.tunnelblick.tunnelblick updateSendProfileInfo -bool NO
 
 # Don't show startup splash screen
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowSplashScreen -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowSplashScreen -bool YES
 
 # Only show window display when connecting
-/usr/bin/defaults write net.tunnelblick.tunnelblick connectionWindowDisplayCriteria -string "showWhenConnecting"
+#/usr/bin/defaults write net.tunnelblick.tunnelblick connectionWindowDisplayCriteria -string "showWhenConnecting"
 
 # Don't show window display on mouseover
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowNotificationWindowOnMouseover -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowNotificationWindowOnMouseover -bool YES
 
 # Don't show disconnected window display
-/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowDisconnectedNotificationWindows -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick doNotShowDisconnectedNotificationWindows -bool YES
 
 # Ignore IP address change warning
-/usr/bin/defaults write net.tunnelblick.tunnelblick skipWarningThatIPAddressDidNotChangeAfterConnection -bool YES
+#/usr/bin/defaults write net.tunnelblick.tunnelblick skipWarningThatIPAddressDidNotChangeAfterConnection -bool YES
 
 ## Datum in Menüleiste anzeigen
 /usr/bin/defaults write com.apple.menuextra.clock DateFormat -string "EEE d. MMM  HH:mm"
@@ -268,9 +268,6 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/Insta
 
 # Install Point-Blank web clips
 bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/InstallWebClips.sh)
-
-# Launch ad-hoc Signature Setter script
-bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureSetter.sh)
 
 # Activates "Require a password to unlock each System Preferences pane"
 /usr/bin/security authorizationdb read system.preferences > /tmp/system.preferences.plist
