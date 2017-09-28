@@ -16,7 +16,8 @@ OperatingSystem=$(sw_vers -productVersion)
 case $OperatingSystem in
 10.11*) Mailversion="V3";;
 10.12*) Mailversion="V4";;
-*) echo "Error while setting mail version. Please note: This script only works with macOS 10.11 and 10.12"
+10.13*) Mailversion="V5";;
+*) echo "Error while setting mail version. Please note: This script only works with macOS 10.11 and 10.12 (and 10.13 as beta)"
 esac
 
 # In the AccountsMaps.plist is a line like <string>imap://name.surname@mail.point-blank-international.com/</string>. Find the line.
