@@ -1,18 +1,20 @@
 #!/bin/bash
-# PBI-SSH-Setup v2.0
+
+# Point-Blank SSH-Setup v2.1
 
 ## Define variable(s)
-operatingsystem=$(sw_vers -productVersion)
-username="$(logname)"
+readonly operatingsystem=$(sw_vers -productVersion)
+readonly username="$(logname)"
 
 ## Define path for sshd_config
 case $operatingsystem in
 	10.10*) sshd_config="/etc/sshd_config";;
 	10.11*) sshd_config="/etc/ssh/sshd_config";;
 	10.12*) sshd_config="/private/etc/ssh/sshd_config";;
+	10.13*) sshd_config="/private/etc/ssh/sshd_config";;
 	*)
 		/bin/echo "Error: This version of macOS is not supported."
-		/usr/bin/logger "Error: PBI-SSH-Setup installation failed."
+		/usr/bin/logger "Error: Point-Blank SSH-Setup failed."
 		exit 1
 		;;
 esac
@@ -32,15 +34,15 @@ EOF
 /bin/chmod 600 /Users/$username/.ssh/authorized_keys
 /usr/sbin/chown -R $username:staff /Users/$username/.ssh
 
-## Edit SSH configuration at /etc/sshd_config
+## Edit SSH configuration file sshd_config
 
 # Create backup of current sshd_config
-/bin/cp $sshd_config $sshd_config.bak
+/bin/cp $sshd_config{,.bak}
 
 # Edit configuration parameters
-/usr/bin/sed -E -i "" "s|^#?PasswordAuthentication yes|PasswordAuthentication no|" $sshd_config
-/usr/bin/sed -E -i "" "s|^#?ChallengeResponseAuthentication yes|ChallengeResponseAuthentication no|" $sshd_config
-/usr/bin/sed -E -i "" "s|^#?PermitRootLogin yes|PermitRootLogin no|" $sshd_config
+/usr/bin/sed -E -i "" "s|^#*PasswordAuthentication yes|PasswordAuthentication no|" $sshd_config
+/usr/bin/sed -E -i "" "s|^#*ChallengeResponseAuthentication yes|ChallengeResponseAuthentication no|" $sshd_config
+/usr/bin/sed -E -i "" "s|^#*PermitRootLogin yes|PermitRootLogin no|" $sshd_config
 
 ## Restart SSH service
 /bin/launchctl stop com.openssh.sshd
@@ -48,5 +50,5 @@ EOF
 ## Activate SSH remote login
 /usr/sbin/systemsetup -f -setremotelogin on
 
-/usr/bin/logger "PBI-SSH-Setup has been installed."
+/usr/bin/logger "Point-Blank SSH-Setup has been successfully finished."
 exit 0

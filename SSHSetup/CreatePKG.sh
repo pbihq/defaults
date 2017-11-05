@@ -1,39 +1,56 @@
 #!/bin/bash
-#
-# Create SSH Setup PKG
 
-set -o nounset
-set -o errexit
+# #################################################################################################
+# Create Point-Blank SSH Setup PKG
+# #################################################################################################
+# Set up logging
+info()    { echo "[INFO] $*" 1> >(sed $'s,.*,\e[32m&\e[m,'); }
+warning() { echo "[WARNING] $*" 1> >(sed $'s,.*,\e[33m&\e[m,'); }
+error()   { echo "[ERROR] $*" 1> >(sed $'s,.*,\e[35m&\e[m,'); }
+fatal()   { echo "[FATAL] $*" 1> >(sed $'s,.*,\e[31m&\e[m,'); exit 1; }
+# #################################################################################################
+# Set unofficial Bash strict mode
+# Source: https://dev.to/thiht/shell-scripts-matter
+set -euo pipefail
+IFS=$'\n\t'
 
-# Set working directory to current directory
-workDir="${0%/*}"
+# Set working directory so that script can be run independent of location
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+# #################################################################################################
 
-buildPKG ()
-{
-# Name of the package.
-PKGName="PBI-SSH-Setup"
-
-# Once installed the identifier is used as the filename for a receipt files in /var/db/receipts/.
-PKGIdentifier="com.point-blank-international.pbi_ssh_client_setup"
-
-# Package version number.
-PKGVersion="2.0"
-
-# Remove any unwanted .DS_Store files.
-/usr/bin/find $workDir -name '*.DS_Store' -type f -delete
-
-# Remove any extended attributes (ACEs).
-/usr/bin/xattr -rc $workDir
-
-# Build package.
-/usr/bin/pkgbuild \
-  --nopayload \
-  --scripts $workDir/scripts \
-  --identifier "$PKGIdentifier" \
-  --version "$PKGVersion" \
-  $workDir/build/"$PKGName-v$PKGVersion.pkg"
+# Check if operating system is macOS
+function checkOS() {
+  if [[ ! "$(uname)" = "Darwin" ]]; then return 1; fi
 }
 
-buildPKG
+# Build package
+function buildPKG() {
+  # Name of the package.
+  PKGName="Point-Blank-SSH-Setup"
+
+  # Once installed the identifier is used as the filename for a receipt files in /var/db/receipts/.
+  PKGIdentifier="com.point-blank-international.pbi_ssh_client_setup"
+
+  # Package version number.
+  PKGVersion="2.1"
+
+  # Remove any unwanted .DS_Store files.
+  /usr/bin/find "$DIR" -name '*.DS_Store' -type f -delete
+
+  # Remove any extended attributes (ACEs).
+  /usr/bin/xattr -rc "$DIR"
+
+  # Build package.
+  /usr/bin/pkgbuild \
+    --nopayload \
+    --scripts "$DIR/scripts" \
+    --identifier "$PKGIdentifier" \
+    --version "$PKGVersion" \
+    "$DIR/build/${PKGName}-v${PKGVersion}.pkg"
+}
+
+checkOS || fatal "It seems you are not running macOS. Exiting..."
+buildPKG || error "Something went wrong while running buildPKG()"
 
 exit 0
