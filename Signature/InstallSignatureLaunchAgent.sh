@@ -37,6 +37,7 @@ function checkRoot() {
 function checkLaunchAgentsFolder() {
 	if [[ ! -d "$launchAgentsPath" ]]; then
 		mkdir -p "$launchAgentsPath"
+    chmod 700 "$launchAgentsPath"
 	fi
 }
 
