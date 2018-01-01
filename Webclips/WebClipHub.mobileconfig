@@ -40,7 +40,7 @@
         <key>Label</key>
         <string>Hub</string>
         <key>URL</key>
-        <string>http://hub.point-blank.net/</string>
+        <string>https://hub.point-blank.net/</string>
         <key>Icon</key>
         <data>iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAAGXRFWHRTb2Z0
         d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRFttWW7vXnmsVt0uW+
