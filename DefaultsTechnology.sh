@@ -254,9 +254,6 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature
 # Install latest version of Point-Blank 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
 
-# Install Point-Blank web clips
-bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Webclips/InstallWebClips.sh)
-
 # Activates "Require a password to unlock each System Preferences pane"
 /usr/bin/security authorizationdb read system.preferences > /tmp/system.preferences.plist
 /usr/bin/defaults write /tmp/system.preferences.plist shared -bool NO
