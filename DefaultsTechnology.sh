@@ -248,8 +248,9 @@ sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOff
 /usr/bin/defaults write ~/Library/Preferences/com.apple.controlstrip MiniCustomized \
 '(com.apple.system.brightness, com.apple.system.volume, com.apple.system.mute, com.apple.system.screen-lock)'
 
+### Temporatily removed due to unresolved problem. Please start this script manually during setup
 # Install Point-Blank SignatureLaunchAgent
-bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
+#bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
 
 # Install latest version of Point-Blank 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
