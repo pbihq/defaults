@@ -24,12 +24,6 @@ Script to do an ad-hoc / onetime update of the machine's Point Blank e-mail sign
 
     bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureSetter.sh)
 
-SignatureGenerator
-==================
-Script to create Point Blank e-mail signatures for individual persons
-
-    bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureGenerator.sh)
-
 Web Clips
 ==================
 Script to install Point Blank web clips
