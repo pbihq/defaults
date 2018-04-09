@@ -168,7 +168,7 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 ##### Nachrichten
 /usr/bin/defaults write com.apple.iChat.plist Unified.EnableGroups -bool No
 /usr/libexec/PlistBuddy -c "Add :CustomAvailableMessages array" ~/Library/Preferences/com.apple.iChat.plist
-/usr/libexec/PlistBuddy -c "Add :CustomAvailableMessages:0 string 'Wallstreet $durchwahl'" ~/Library/Preferences/com.apple.iChat.plist
+/usr/libexec/PlistBuddy -c "Add :CustomAvailableMessages:0 string 'Wall Street $durchwahl'" ~/Library/Preferences/com.apple.iChat.plist
 /usr/libexec/PlistBuddy -c "Add :CustomAvailableMessages:3 string 'Feld'" ~/Library/Preferences/com.apple.iChat.plist
 /usr/libexec/PlistBuddy -c "Add :CustomAvailableMessages:4 string 'Homeoffice'" ~/Library/Preferences/com.apple.iChat.plist
 
