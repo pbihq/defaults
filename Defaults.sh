@@ -36,9 +36,19 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ## Setup Apple Remote Desktop
 # Give access only to pbimaintenance and show ard menu on the client machine so users can tell if you are observing or controling
 echo "Setting up Apple Remote Desktop..."
+
+# Check for local maintenance account
+if [[ $(id pbmaintenance 2> /dev/null) ]]; then
+	maintenanceUser=pbmaintenance
+elif [[ $(id pbimaintenance 2> /dev/null) ]]; then
+	maintenanceUser=pbimaintenance
+else
+	echo "Error: No Point Blank maintenance user account found."
+fi
+
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -specifiedUsers
-sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -access -on -privs -all -users pbimaintenance
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -access -on -privs -all -users "$maintenanceUser"
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -clientopts -setmenuextra -menuextra yes
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -menu
 

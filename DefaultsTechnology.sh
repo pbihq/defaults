@@ -34,9 +34,17 @@ clear
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # PBI Maintenance Nutzeraccount löschen, sofern vorhanden
-if [[ $(id pbimaintenance 2> /dev/null) ]]; then
-	echo "PBI Maintenance Nutzeraccount wird gelöscht..."
-	sudo sysadminctl -deleteUser pbimaintenance
+# Check for local maintenance account
+if [[ $(id pbmaintenance 2> /dev/null) ]]; then
+	maintenanceUser=pbmaintenance
+elif [[ $(id pbimaintenance 2> /dev/null) ]]; then
+	maintenanceUser=pbimaintenance
+fi
+
+# If a local maintenance accout has been found, delete it
+if [[ -n $maintenanceUser ]]; then
+	echo "Point Blank Maintenance Nutzeraccount wird gelöscht..."
+	sudo sysadminctl -deleteUser "$maintenanceUser"
 fi
 
 # Login-Bildschirm konfigurieren
