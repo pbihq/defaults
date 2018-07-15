@@ -249,10 +249,10 @@ sudo /usr/bin/defaults write /Library/Preferences/.GlobalPreferences com.apple.m
 # /usr/bin/defaults write com.apple.dock tilesize -int 36
 
 ## Set a default program for a fileytpe, i.e. MP3 and WAV to open in Quicktime
-/usr/bin/defaults write com.apple.LaunchServices LSHandlers -array-add \
-	'{LSHandlerContentType = "public.mp3"; LSHandlerRoleAll = "com.apple.quicktimeplayerx";}'
-/usr/bin/defaults write com.apple.LaunchServices LSHandlers -array-add \
-	'{LSHandlerContentType = "com.microsoft.waveform-audio"; LSHandlerRoleAll = "com.apple.quicktimeplayerx";}'
+# /usr/bin/defaults write com.apple.LaunchServices LSHandlers -array-add \
+# 	'{LSHandlerContentType = "public.mp3"; LSHandlerRoleAll = "com.apple.quicktimeplayerx";}'
+# /usr/bin/defaults write com.apple.LaunchServices LSHandlers -array-add \
+# 	'{LSHandlerContentType = "com.microsoft.waveform-audio"; LSHandlerRoleAll = "com.apple.quicktimeplayerx";}'
 
 ## Disable Time Machine's pop-up message whenever an external drive is plugged in
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
