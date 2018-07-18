@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-# Point-Blank macOS and application defaults.
+# Point Blank macOS and application defaults.
 
 ## Define variables
 readonly seriennummer=$(system_profiler SPHardwareDataType | awk '/Serial Number/ { print $4 }')
@@ -8,14 +8,14 @@ readonly mitarbeiter=$(id -F)
 
 ## Ask for some user input at the beginning
 clear
-echo "Starte Point-Blank-Defaults-Setup..."
+echo "Starte Point Blank-Defaults-Setup..."
 echo
-read -p "Wie lautet die Point-Blank-Inventarnummer des Macs [$seriennummer]? " inventarnummer
+read -p "Wie lautet die Point Blank-Inventarnummer des Macs [$seriennummer]? " inventarnummer
 	while [[ -z "$inventarnummer"  ]]; do
     	inventarnummer=$seriennummer
 	done
 echo
-read -p "Wie lauten die eindeutigen Initialen von $mitarbeiter bei Point-Blank (z. B. RTh oder TW)? " initialen
+read -p "Wie lauten die eindeutigen Initialen von $mitarbeiter bei Point Blank (z. B. RTh oder TW)? " initialen
 	while [[ -z "$initialen"  ]]; do
     	initialen="FREI"
 	done
@@ -52,11 +52,11 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -clientopts -setmenuextra -menuextra yes
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -menu
 
-logger "Point-Blank Setup Setup User + ARD config installed"
-echo "Point-Blank Setup Setup User + ARD config installed"
+logger "Point Blank Setup Setup User + ARD config installed"
+echo "Point Blank Setup Setup User + ARD config installed"
 
-# Point-Blank Maintenance ausblenden
-sudo dscl . create /Users/pbimaintenance IsHidden 1
+# Point Blank Maintenance ausblenden
+sudo dscl . create /Users/"$maintenanceUser" IsHidden 1
 
 # Login-Bildschirm konfigurieren
 sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "www.point-blank.net"
@@ -80,8 +80,8 @@ sudo softwareupdate --schedule on
 # sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool YES
 # sudo /usr/bin/defaults write /Library/Preferences/com.apple.commerce AutoUpdateRestartRequired -bool YES
 
-logger "Point-Blank Setup Setup ARD v1.0 installed"
-echo "Point-Blank Setup Setup ARD v1.0 installed"
+logger "Point Blank Setup Setup ARD v1.0 installed"
+echo "Point Blank Setup Setup ARD v1.0 installed"
 
 #### Systemeinstellungen
 
@@ -97,7 +97,7 @@ sudo scutil --set HostName "$inventarnummer-$initialen"
 sudo /usr/bin/defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$inventarnummer-$initialen"
 dscacheutil -flushcache
 
-## Point-Blank NTP Setup
+## NTP Setup
 sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
 
 ## Bildschirmschoner
@@ -269,10 +269,10 @@ sudo /usr/bin/defaults write /Library/Preferences/com.apple.TimeMachine DoNotOff
 '(com.apple.system.brightness, com.apple.system.volume, com.apple.system.mute, com.apple.system.screen-lock)'
 
 ### Temporatily removed due to unresolved problem. Please start this script manually during setup
-# Install Point-Blank SignatureLaunchAgent
+# Install Point Blank SignatureLaunchAgent
 #bash <(curl -s https://raw.githubusercontent.com/pbihq/defaults/master/Signature/SignatureLaunchAgent.sh)
 
-# Install latest version of Point-Blank 'Status' script
+# Install latest version of Point Blank 'Status' script
 bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/InstallStatus.sh)
 
 # Activates "Require a password to unlock each System Preferences pane"
@@ -282,7 +282,7 @@ bash <(curl -s https://raw.githubusercontent.com/pbihq/tools/master/Status/Insta
 /bin/rm -f /tmp/system.preferences.plist
 
 ## Change user picture
-# 1. Curl Point-Blank user pictures tifs from web source into /Library/User\ Pictures/Point-Blank
+# 1. Curl Point Blank user pictures tifs from web source into /Library/User\ Pictures/Point-Blank
 #sudo dscl . delete /Users/$USER jpegphoto
 #sudo dscl . delete /Users/$USER picture
 #sudo dscl . create /Users/$USER picture "/Library/User\ Pictures/Point-Blank/$USER.tif"
@@ -316,9 +316,9 @@ do
 	killall "$app" &> /dev/null
 done
 
-echo "Point-Blank Defaults wurden installiert. Bitte Mac neustarten!"
+echo "Point Blank Defaults wurden installiert. Bitte Mac neustarten!"
 echo
-logger "Point-Blank Defaults wurden installiert."
+logger "Point Blank Defaults wurden installiert."
 
 osascript -e 'tell app "loginwindow" to «event aevtrrst»'
 exit 0
