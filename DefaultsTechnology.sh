@@ -84,7 +84,8 @@ sudo /usr/bin/defaults write /Library/Preferences/SystemConfiguration/com.apple.
 dscacheutil -flushcache
 
 ## NTP Setup
-sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
+# 2018/08 Now managed by configuration profile
+#sudo systemsetup -setnetworktimeserver utm.point-blank-international.com
 
 ## Bildschirmschoner
 # 2016/07 Now managed by configuration profile
