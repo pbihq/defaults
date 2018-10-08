@@ -65,7 +65,7 @@ function installLaunchAgent() {
 		<key>StandardOutPath</key>
 		<string>/tmp/${launchAgentName}.stdout</string>
 		<key>StartInterval</key>
-		<integer>21600</integer>
+		<integer>10800</integer>
 	</dict>
 	</plist>
 	EOF
